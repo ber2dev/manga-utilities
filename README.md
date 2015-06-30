@@ -1,2 +1,2 @@
 # manga-utilities
-A set of utilities for your manga
+A set of utilities for your manga.
