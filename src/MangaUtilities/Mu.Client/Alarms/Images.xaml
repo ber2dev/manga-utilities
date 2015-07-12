@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="NewAlarmActionIcon" UriSource="Images/view-time-schedule-insert.png"/>
+    <BitmapImage x:Key="DeleteAlarmActionIcon" UriSource="Images/view-time-schedule-baselined-remove.png"/>
+    <BitmapImage x:Key="EditAlarmActionIcon" UriSource="Images/view-time-schedule-edit.png"/>
+    <BitmapImage x:Key="ShowAlarmActionIcon" UriSource="Images/view-time-schedule.png"/>
+    <BitmapImage x:Key="NewFromAlarmActionIcon" UriSource="Images/view-time-schedule-child-insert.png"/>
+</ResourceDictionary>

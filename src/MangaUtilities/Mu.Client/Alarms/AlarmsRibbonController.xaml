@@ -1,0 +1,24 @@
+﻿<fluent:RibbonGroupBox 
+    x:Class="Mu.Client.Alarms.AlarmsRibbonController"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fluent="urn:fluent-ribbon"
+    xmlns:actions="clr-namespace:Mu.Client.Alarms.Actions"
+    xmlns:resx="clr-namespace:Mu.Client.Alarms"
+    mc:Ignorable="d" 
+    x:Name="This"
+    Header="{x:Static resx:AlarmsResources.AlarmsRibbonController_Header}"
+    ItemsSource="{Binding ElementName=This, Path=Manager.Actions}">
+    <fluent:RibbonGroupBox.ItemTemplate>
+        <DataTemplate DataType="actions:AbstractAlarmAction">
+            <fluent:Button
+                Header="{Binding Action, Mode=OneTime}"
+                LargeIcon="{Binding Icon}"
+                ToolTip="{Binding Description}"
+                Click="ButtonBase_OnClick"
+                />
+        </DataTemplate>
+    </fluent:RibbonGroupBox.ItemTemplate>
+</fluent:RibbonGroupBox>

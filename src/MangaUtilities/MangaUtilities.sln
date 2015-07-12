@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mu.GoodManga", "Mu.GoodMang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mu.Tests", "Mu.Tests\Mu.Tests.csproj", "{EC3A242B-5AE3-43B2-954B-163F60D54EA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mu.Core.Mvvm", "Mu.Core.Mvvm\Mu.Core.Mvvm.csproj", "{9FC355D7-019E-408D-8B13-46E107525981}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{EC3A242B-5AE3-43B2-954B-163F60D54EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC3A242B-5AE3-43B2-954B-163F60D54EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC3A242B-5AE3-43B2-954B-163F60D54EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC355D7-019E-408D-8B13-46E107525981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC355D7-019E-408D-8B13-46E107525981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC355D7-019E-408D-8B13-46E107525981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC355D7-019E-408D-8B13-46E107525981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
