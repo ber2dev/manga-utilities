@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Mu.Alarms;
+using Mu.Main;
 
 namespace MangaSharp
 {
@@ -13,7 +14,7 @@ namespace MangaSharp
             InitializeComponent();
 
             var appManager = new ApplicationManager(Application.Current);
-
+            var mainManager = new MainManager(GoodMangaTabController);
             var alarmsManager = new AlarmsManager(appManager);
         }
     }

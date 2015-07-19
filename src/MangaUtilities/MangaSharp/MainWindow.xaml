@@ -1,9 +1,12 @@
 ﻿<Window x:Class="MangaSharp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:goodManga="clr-namespace:Mu.GoodManga;assembly=Mu.GoodManga"
+        Title="MainWindow" Height="768" Width="1024">
     <DockPanel LastChildFill="True">
         <StatusBar DockPanel.Dock="Bottom" />
-        <TabControl TabStripPlacement="Left" />
+        <TabControl TabStripPlacement="Left">
+            <goodManga:GoodMangaTabController x:Name="GoodMangaTabController" />
+        </TabControl>
     </DockPanel>
 </Window>
