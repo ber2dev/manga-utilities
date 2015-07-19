@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{315BF503-7FBF-4EDD-B892-30922F6868AA}</ProjectGuid>
+    <ProjectGuid>{0ABD300F-2055-4F29-B5C7-7FBA0DDA1E09}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mu.GoodManga</RootNamespace>
-    <AssemblyName>Mu.GoodManga</AssemblyName>
+    <RootNamespace>Mu.Alarms</RootNamespace>
+    <AssemblyName>Mu.Alarms</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +44,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlarmsManager.cs" />
+    <Compile Include="AlarmsWorkspaceNavigationLink.cs" />
+    <Compile Include="IAlarmsListController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mu.Client.Infrastructure\Mu.Client.Infrastructure.csproj">
+      <Project>{1F81A7AA-BEAF-47B4-9416-7814F1EBFE08}</Project>
+      <Name>Mu.Client.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Client.Wpf.Infrastructure\Mu.Client.Wpf.Infrastructure.csproj">
+      <Project>{6402C917-DB32-45B9-AE5D-52186CACEF9C}</Project>
+      <Name>Mu.Client.Wpf.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Main\Mu.Main.csproj">
+      <Project>{2C19DF40-6A14-43B6-BCD5-8824FB7B235F}</Project>
+      <Name>Mu.Main</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
