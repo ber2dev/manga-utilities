@@ -1,33 +1,19 @@
 ﻿using System.Windows;
 using Mu.Client.Infrastructure;
-using Mu.Main;
 
 namespace MangaSharp
 {
     public class ApplicationManager : ManagerBase
     {
-        private IManager _navigationManager;
+        private readonly Application _current;
 
-        public ApplicationManager(Application current)
+        public ApplicationManager(Application pCurrent)
         {
-            
+            _current = pCurrent;
         }
 
-        public void SetNavigationManager(IManager navigationManager)
+        public override IActionResult Execute(IAction pAction)
         {
-            _navigationManager = navigationManager;
-        }
-
-        public override IActionResult Execute(IAction action)
-        {
-            if (action is NavigationAction)
-            {
-                if (_navigationManager != null)
-                {
-                    return _navigationManager.Execute(action);
-                }
-            }
-
             return null;
         }
     }

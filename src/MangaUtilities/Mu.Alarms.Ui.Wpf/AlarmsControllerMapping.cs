@@ -5,7 +5,7 @@ namespace Mu.Alarms.Ui.Wpf
 {
     public static class AlarmsControllerMapping
     {
-        public static readonly IDictionary<Type, Type> Map = new Dictionary<Type, Type>
+        public static readonly IDictionary<Type, Type> MAP = new Dictionary<Type, Type>
         {
             {typeof(IAlarmsListController), typeof(AlarmsListView)}
         };

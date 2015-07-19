@@ -42,10 +42,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IContentLoader.cs" />
-    <Compile Include="NavigationAction.cs" />
-    <Compile Include="NavigationLink.cs" />
-    <Compile Include="NavigationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

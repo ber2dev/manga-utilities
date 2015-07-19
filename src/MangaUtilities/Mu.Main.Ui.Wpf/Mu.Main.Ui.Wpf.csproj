@@ -43,23 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NavigationTreeActionsView.xaml.cs">
-      <DependentUpon>NavigationTreeActionsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NavigationTreeView.xaml.cs">
-      <DependentUpon>NavigationTreeView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="NavigationTreeActionsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NavigationTreeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mu.Client.Infrastructure\Mu.Client.Infrastructure.csproj">

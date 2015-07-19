@@ -10,23 +10,23 @@ namespace Mu.Core
     {
         #region Constants
 
-        private const string DataFileConfig = "dataFile";
-        private const string DataFileDefaultFileName = "muData.xml";
+        private const string DATA_FILE_CONFIG = "dataFile";
+        private const string DATA_FILE_DEFAULT_FILE_NAME = "muData.xml";
         
         #endregion
 
         #region Singleton
         
-        private static readonly Lazy<MuEnvironment> LazyInstance;
+        private static readonly Lazy<MuEnvironment> LAZY_INSTANCE;
 
         public static MuEnvironment Instance
         {
-            get { return LazyInstance.Value; }
+            get { return LAZY_INSTANCE.Value; }
         }
 
         static MuEnvironment()
         {
-            LazyInstance = new Lazy<MuEnvironment>(() => new MuEnvironment());
+            LAZY_INSTANCE = new Lazy<MuEnvironment>(() => new MuEnvironment());
         } 
         
         #endregion
@@ -35,10 +35,10 @@ namespace Mu.Core
 
         private MuEnvironment()
         {
-            _dataFile = ConfigurationManager.AppSettings[DataFileConfig];
+            _dataFile = ConfigurationManager.AppSettings[DATA_FILE_CONFIG];
             if (string.IsNullOrWhiteSpace(_dataFile))
             {
-                _dataFile = Path.Combine(Environment.CurrentDirectory, DataFileDefaultFileName);
+                _dataFile = Path.Combine(Environment.CurrentDirectory, DATA_FILE_DEFAULT_FILE_NAME);
             }
 
             _alerts = new AlertCollection();

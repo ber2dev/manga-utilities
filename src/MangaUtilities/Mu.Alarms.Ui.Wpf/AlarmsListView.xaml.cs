@@ -1,6 +1,4 @@
-﻿using System.Windows.Controls;
-
-namespace Mu.Alarms.Ui.Wpf
+﻿namespace Mu.Alarms.Ui.Wpf
 {
     /// <summary>
     /// Interaction logic for AlarmsListView.xaml

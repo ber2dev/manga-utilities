@@ -68,8 +68,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MangaSharpContentLoader.cs" />
-    <Compile Include="MangaSharpNavigationTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

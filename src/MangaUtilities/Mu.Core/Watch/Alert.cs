@@ -2,9 +2,9 @@
 {
     public sealed class Alert
     {
-        public Alert(IAlertMetadata metadata)
+        public Alert(IAlertMetadata pMetadata)
         {
-            Metadata = metadata;
+            Metadata = pMetadata;
         }
 
         public IAlertMetadata Metadata

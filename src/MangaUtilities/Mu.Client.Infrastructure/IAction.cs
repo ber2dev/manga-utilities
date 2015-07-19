@@ -2,7 +2,7 @@
 {
     public interface IAction
     {
-        T GetParameter<T>(string name);
-        void SetParameter(string name, object value0);
+        T GetParameter<T>(string pName);
+        void SetParameter(string pName, object pValue);
     }
 }

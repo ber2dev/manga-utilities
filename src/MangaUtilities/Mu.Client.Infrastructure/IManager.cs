@@ -4,7 +4,7 @@ namespace Mu.Client.Infrastructure
 {
     public interface IManager
     {
-        IActionResult Execute(IAction action);
+        IActionResult Execute(IAction pAction);
         IEnumerable<IController> GetControllers();
     }
 
@@ -12,12 +12,12 @@ namespace Mu.Client.Infrastructure
     {
         private readonly List<IController> _controllers;
 
-        protected ManagerBase(params IController[] controllers)
+        protected ManagerBase(params IController[] pControllers)
         {
-            _controllers = new List<IController>((controllers ?? new IController[0]));
+            _controllers = new List<IController>((pControllers ?? new IController[0]));
         }
 
-        public virtual IActionResult Execute(IAction action)
+        public virtual IActionResult Execute(IAction pAction)
         {
             return new NotAvailableActionResult();
         }

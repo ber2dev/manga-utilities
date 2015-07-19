@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmsManager.cs" />
-    <Compile Include="AlarmsWorkspaceNavigationLink.cs" />
     <Compile Include="IAlarmsListController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

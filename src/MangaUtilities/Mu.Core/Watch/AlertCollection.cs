@@ -6,9 +6,9 @@ namespace Mu.Core.Watch
 {
     public class AlertCollection : CollectionBase<Alert>
     {
-        public override void Save(IContext context)
+        public override void Save(IContext pContext)
         {
-            var xml = XDocument.Load(context.DataFile);
+            var xml = XDocument.Load(pContext.DataFile);
             XElement altersContainer;
             var alters = xml.Descendants(XName.Get("Alerts"));
             if (!alters.Any())

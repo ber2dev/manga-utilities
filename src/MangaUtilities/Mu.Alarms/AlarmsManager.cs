@@ -6,14 +6,14 @@ namespace Mu.Alarms
     {
         private readonly IManager _parentManager;
 
-        public AlarmsManager(IManager parentManager)
+        public AlarmsManager(IManager pArentManager)
         {
-            _parentManager = parentManager;
+            _parentManager = pArentManager;
         }
 
-        public override IActionResult Execute(IAction action)
+        public override IActionResult Execute(IAction pAction)
         {
-            return _parentManager.Execute(action);
+            return _parentManager.Execute(pAction);
         }
     }
 }

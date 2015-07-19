@@ -48,7 +48,6 @@
     <Compile Include="IActionResult.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IManager.cs" />
-    <Compile Include="INavigationContext.cs" />
     <Compile Include="NoAction.cs" />
     <Compile Include="NotAvailableActionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

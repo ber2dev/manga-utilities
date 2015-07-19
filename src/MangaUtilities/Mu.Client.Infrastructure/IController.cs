@@ -2,7 +2,7 @@
 {
     public interface IController
     {
-        void SetManager(IManager manager);
-        void UpdateState(object state);
+        void SetManager(IManager pManager);
+        void UpdateState(object pState);
     }
 }

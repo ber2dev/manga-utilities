@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceManagerHelper.cs" />
-    <Compile Include="Ui\NavigationContext.cs" />
     <Compile Include="Ui\UserControlBase.cs" />
   </ItemGroup>
   <ItemGroup>

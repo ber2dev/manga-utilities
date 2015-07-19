@@ -9,37 +9,37 @@ namespace Mu.Client.Wpf.Infrastructure
     {
         private readonly ResourceManager _manager;
 
-        public ResourceManagerHelper(ResourceManager manager)
+        public ResourceManagerHelper(ResourceManager pManager)
         {
-            _manager = manager;
+            _manager = pManager;
         }
 
-        public string GetString(string resourceName)
+        public string GetString(string pResourceName)
         {
-            var resource = _manager.GetString(resourceName);
+            var resource = _manager.GetString(pResourceName);
             if (string.IsNullOrWhiteSpace(resource))
             {
                 throw new InvalidOperationException(
-                    string.Format("No resource found or an empty value was defined for {0}", resourceName)
+                    string.Format("No resource found or an empty value was defined for {0}", pResourceName)
                 );
             }
 
             return resource;
         }
 
-        public BitmapSource GetIcon(string resourceName, string module)
+        public BitmapSource GetIcon(string pResourceName, string pModule)
         {
             var resourceDictionaryUri = new Uri(
-                string.Format("/{0};component/{1}/Images.xaml", GetType().Assembly.GetName().Name, module),
+                string.Format("/{0};component/{1}/Images.xaml", GetType().Assembly.GetName().Name, pModule),
                 UriKind.RelativeOrAbsolute);
 
             var resourceDictionary = new ResourceDictionary { Source = resourceDictionaryUri };
-            if (!resourceDictionary.Contains(resourceName))
+            if (!resourceDictionary.Contains(pResourceName))
             {
-                throw new ArgumentException(string.Format("the resource {0} could not be found on resource dictionary {1}", resourceName, resourceDictionaryUri));
+                throw new ArgumentException(string.Format("the resource {0} could not be found on resource dictionary {1}", pResourceName, resourceDictionaryUri));
             }
 
-            var resource = resourceDictionary[resourceName];
+            var resource = resourceDictionary[pResourceName];
             return resource as BitmapSource;
         }
     }

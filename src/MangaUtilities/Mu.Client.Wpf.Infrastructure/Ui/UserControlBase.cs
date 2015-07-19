@@ -9,9 +9,9 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
 
         public UserControlBase() { }
 
-        public virtual void SetManager(IManager manager)
+        public virtual void SetManager(IManager pManager)
         {
-            _manager = manager;
+            _manager = pManager;
         }
 
         public virtual IManager GetManager()
@@ -25,7 +25,7 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
             return (T)_manager;
         }
 
-        public virtual void UpdateState(object state)
+        public virtual void UpdateState(object pState)
         {
             
         }
