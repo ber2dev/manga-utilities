@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE3972A9-098E-4877-9581-DE52CFBB271D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MangaSharp</RootNamespace>
+    <AssemblyName>MangaSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mu.Alarms.Ui.Wpf\Mu.Alarms.Ui.Wpf.csproj">
+      <Project>{1f1951e5-d1c0-4b97-9a7c-7a05b64d7bd3}</Project>
+      <Name>Mu.Alarms.Ui.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Alarms\Mu.Alarms.csproj">
+      <Project>{0abd300f-2055-4f29-b5c7-7fba0dda1e09}</Project>
+      <Name>Mu.Alarms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Client.Infrastructure\Mu.Client.Infrastructure.csproj">
+      <Project>{1f81a7aa-beaf-47b4-9416-7814f1ebfe08}</Project>
+      <Name>Mu.Client.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Client.Wpf.Infrastructure\Mu.Client.Wpf.Infrastructure.csproj">
+      <Project>{6402c917-db32-45b9-ae5d-52186cacef9c}</Project>
+      <Name>Mu.Client.Wpf.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Core\Mu.Core.csproj">
+      <Project>{a7fcbba8-c810-43fd-aafb-9a62250e85ef}</Project>
+      <Name>Mu.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.GoodManga.Ui.Wpf\Mu.GoodManga.Ui.Wpf.csproj">
+      <Project>{630a2da7-ebbc-4cda-861c-c572ba3c373a}</Project>
+      <Name>Mu.GoodManga.Ui.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.GoodManga\Mu.GoodManga.csproj">
+      <Project>{315bf503-7fbf-4edd-b892-30922f6868aa}</Project>
+      <Name>Mu.GoodManga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Main.Ui.Wpf\Mu.Main.Ui.Wpf.csproj">
+      <Project>{0df90cc3-fac5-4109-90de-6a85a1b2ac78}</Project>
+      <Name>Mu.Main.Ui.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Main\Mu.Main.csproj">
+      <Project>{2c19df40-6a14-43b6-bcd5-8824fb7b235f}</Project>
+      <Name>Mu.Main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
