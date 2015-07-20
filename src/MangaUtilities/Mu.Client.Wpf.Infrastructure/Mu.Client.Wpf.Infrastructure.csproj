@@ -48,8 +48,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceManagerHelper.cs" />
-    <Compile Include="Ui\TabControlBase.cs" />
+    <Compile Include="Ui\TabItemBase.cs" />
     <Compile Include="Ui\UserControlBase.cs" />
+    <Compile Include="Ui\WindowBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mu.Client.Infrastructure\Mu.Client.Infrastructure.csproj">

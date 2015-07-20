@@ -44,13 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentBase.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="IActionResult.cs" />
-    <Compile Include="IController.cs" />
-    <Compile Include="IManager.cs" />
-    <Compile Include="ManagerBase.cs" />
+    <Compile Include="IComponent.cs" />
     <Compile Include="NoAction.cs" />
     <Compile Include="NotAvailableActionResult.cs" />
+    <Compile Include="NotSetComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

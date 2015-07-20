@@ -2,10 +2,10 @@
 
 namespace Mu.Main
 {
-    public class MainManager : ManagerBase
+    public class MainManager : ComponentBase
     {
-        public MainManager(params IController[] pControllers)
-            : base(pControllers)
+        public MainManager(IComponent pParent)
+            : base(pParent)
         {
 
         }

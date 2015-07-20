@@ -2,18 +2,11 @@
 
 namespace Mu.Alarms
 {
-    public class AlarmsManager : ManagerBase
+    public class AlarmsManager : ComponentBase
     {
-        private readonly IManager _parentManager;
-
-        public AlarmsManager(IManager pArentManager)
+        public AlarmsManager(IComponent pParent)
+            : base(pParent)
         {
-            _parentManager = pArentManager;
-        }
-
-        public override IActionResult Execute(IAction pAction)
-        {
-            return _parentManager.Execute(pAction);
         }
     }
 }

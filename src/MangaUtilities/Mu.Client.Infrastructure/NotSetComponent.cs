@@ -1,20 +1,13 @@
 ﻿using System.Collections.Generic;
-using Mu.Client.Infrastructure;
-using Mu.GoodManga.Ui.Wpf;
-using Mu.Main;
 
-namespace MangaSharp
+namespace Mu.Client.Infrastructure
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : IComponent
+    public sealed class NotSetComponent : IComponent
     {
-        public MainWindow(IComponent pParent = null)
+        public static readonly IComponent INSTANCE = new NotSetComponent();
+
+        private NotSetComponent()
         {
-            InitializeComponent();
-            var mainManager = new MainManager(this);
-            TabControl.Items.Add(new TabController(mainManager));
         }
 
         public IActionResult Execute(IAction pAction)
@@ -24,12 +17,12 @@ namespace MangaSharp
 
         public IEnumerable<IComponent> GetChildren()
         {
-            return new List<IComponent>();
+            return new IComponent[0];
         }
 
         public IComponent GetParent()
         {
-            return NotSetComponent.INSTANCE;
+            return INSTANCE;
         }
 
         public void Update(object pState)
@@ -38,6 +31,7 @@ namespace MangaSharp
 
         public void AddComponent(IComponent pComponent)
         {
+            
         }
 
         public bool RemoveComponent(IComponent pComponent)

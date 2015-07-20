@@ -115,6 +115,10 @@
       <Project>{a7fcbba8-c810-43fd-aafb-9a62250e85ef}</Project>
       <Name>Mu.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Mu.GoodManga.Ui.Wpf\Mu.GoodManga.Ui.Wpf.csproj">
+      <Project>{630a2da7-ebbc-4cda-861c-c572ba3c373a}</Project>
+      <Name>Mu.GoodManga.Ui.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mu.GoodManga\Mu.GoodManga.csproj">
       <Project>{315bf503-7fbf-4edd-b892-30922f6868aa}</Project>
       <Name>Mu.GoodManga</Name>

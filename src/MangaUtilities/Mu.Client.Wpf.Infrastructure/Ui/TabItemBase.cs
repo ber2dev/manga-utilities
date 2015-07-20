@@ -5,15 +5,15 @@ using Mu.Client.Infrastructure;
 namespace Mu.Client.Wpf.Infrastructure.Ui
 {
     /// <summary>
-    /// Base class for a basic user control.
+    /// Base class for a TabItem user control.
     /// For Design purpose it mantains both parameter-less constructor and full constructor
     /// </summary>
-    public class UserControlBase : UserControl, IComponent
+    public class TabItemBase: TabItem, IComponent
     {
         private readonly IList<IComponent> _children;
         private readonly IComponent _parent;
 
-        protected UserControlBase(IComponent pParent = null)
+        protected TabItemBase(IComponent pParent = null)
         {
             _parent = (pParent ?? NotSetComponent.INSTANCE);
             _children = new List<IComponent>();

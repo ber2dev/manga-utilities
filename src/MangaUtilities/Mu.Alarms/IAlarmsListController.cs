@@ -2,7 +2,7 @@
 
 namespace Mu.Alarms
 {
-    public interface IAlarmsListController : IController
+    public interface IAlarmsListController : IComponent
     {
     }
 }

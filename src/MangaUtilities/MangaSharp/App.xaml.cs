@@ -7,5 +7,6 @@ namespace MangaSharp
     /// </summary>
     public partial class App
     {
+        public static readonly Thickness STANDARD_MARGIN = new Thickness(2);
     }
 }
