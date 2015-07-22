@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
+using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Actions
 {
@@ -21,6 +22,8 @@ namespace Mu.Client.Infrastructure.Actions
 
         public T GetParameter<T>(string pName)
         {
+            ArgumentsValidation.NotNull(pName, "pName");
+
             object @out;
             if (_parameters.TryGetValue(pName, out @out))
             {
@@ -32,6 +35,8 @@ namespace Mu.Client.Infrastructure.Actions
 
         public void SetParameter(string pName, object pValue)
         {
+            ArgumentsValidation.NotNull(pName, "pName");
+
             _parameters[pName] = pValue;
         }
     }

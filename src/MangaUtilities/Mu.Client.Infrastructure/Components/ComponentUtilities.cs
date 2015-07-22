@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using Mu.Client.Infrastructure.Actions;
+using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Components
 {
@@ -12,6 +13,9 @@ namespace Mu.Client.Infrastructure.Components
             IAction pAction,
             bool pCheckSource)
         {
+            ArgumentsValidation.NotNull(pComponent, "pComponent");
+            ArgumentsValidation.NotNull(pAction, "pAction");
+
             var result = new List<IActionResult>();
 
             var children = pComponent.GetChildren();
@@ -43,6 +47,9 @@ namespace Mu.Client.Infrastructure.Components
             IAction pAction,
             bool pCheckSource)
         {
+            ArgumentsValidation.NotNull(pComponent, "pComponent");
+            ArgumentsValidation.NotNull(pAction, "pAction");
+
             var result = new List<IActionResult>();
 
             var parent = pComponent.GetParent();

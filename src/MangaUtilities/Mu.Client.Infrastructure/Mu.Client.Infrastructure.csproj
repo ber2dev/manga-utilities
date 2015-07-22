@@ -59,6 +59,12 @@
     <Compile Include="Components\NotSetComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mu.Core\Mu.Core.csproj">
+      <Project>{A7FCBBA8-C810-43FD-AAFB-9A62250E85EF}</Project>
+      <Name>Mu.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

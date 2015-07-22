@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Actions
 {
@@ -18,11 +19,15 @@ namespace Mu.Client.Infrastructure.Actions
 
         public void Add(IActionResult pActionResult)
         {
+            ArgumentsValidation.NotNull(pActionResult, "pActionResult");
+
             AddRange(new []{pActionResult});
         }
 
         public void AddRange(IEnumerable<IActionResult> pActionResultEnumeration)
         {
+            ArgumentsValidation.NotNull(pActionResultEnumeration, "pActionResultEnumeration");
+
             foreach (var actionResult in pActionResultEnumeration)
             {
                 _actionResults.Add(actionResult);

@@ -48,6 +48,7 @@
     <Compile Include="Common\Service\ServiceBase.cs" />
     <Compile Include="Common\Tasking\ITask.cs" />
     <Compile Include="Common\Tasking\TaskCollection.cs" />
+    <Compile Include="Common\Validation\ArgumentsValidation.cs" />
     <Compile Include="MuEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\ISearchObserver.cs" />
@@ -59,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Service\Sync\" />
-    <Folder Include="Common\Validation\" />
     <Folder Include="Persistence\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

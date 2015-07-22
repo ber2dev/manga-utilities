@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Strategies;
+using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Components
 {
@@ -63,6 +64,8 @@ namespace Mu.Client.Infrastructure.Components
 
         protected bool IsActionSource(IAction pAction)
         {
+            ArgumentsValidation.NotNull(pAction, "pAction");
+
             return pAction != null && ReferenceEquals(pAction.GetSource(), this);
         }
 
