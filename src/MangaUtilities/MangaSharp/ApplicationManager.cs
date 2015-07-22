@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Mu.Client.Infrastructure;
+using Mu.Client.Infrastructure.Components;
 
 namespace MangaSharp
 {

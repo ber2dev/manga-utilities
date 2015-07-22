@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Controls;
 using Mu.Client.Infrastructure;
+using Mu.Client.Infrastructure.Actions;
+using Mu.Client.Infrastructure.Components;
+using Mu.Client.Infrastructure.Components.Strategies;
 
 namespace Mu.Client.Wpf.Infrastructure.Ui
 {
@@ -10,19 +13,29 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
     /// </summary>
     public class UserControlBase : UserControl, IComponent
     {
+        private readonly IComponentStrategy _componentStrategy;
         private readonly IList<IComponent> _children;
         private readonly IComponent _parent;
 
-        protected UserControlBase(IComponent pParent = null)
+        protected UserControlBase(
+            IComponent pParent = null,
+            IComponentStrategy pComponentStrategy = null)
         {
             _parent = (pParent ?? NotSetComponent.INSTANCE);
             _children = new List<IComponent>();
+            _componentStrategy = (pComponentStrategy ?? new NoMatchPropagationStrategy(this));
+
             Initialize();
         }
 
         public virtual IActionResult Execute(IAction pAction)
         {
-            return GetParent().Execute(pAction);
+            if (IsActionSource(pAction))
+            {
+                return new NotAvailableActionResult();
+            }
+
+            return _componentStrategy.Execute(pAction);
         }
 
         public IEnumerable<IComponent> GetChildren()
@@ -53,6 +66,11 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
         public bool RemoveComponent(IComponent pComponent)
         {
             return _children.Remove(pComponent);
+        }
+
+        protected bool IsActionSource(IAction pAction)
+        {
+            return pAction != null && ReferenceEquals(pAction.GetSource(), this);
         }
 
         private void Initialize()

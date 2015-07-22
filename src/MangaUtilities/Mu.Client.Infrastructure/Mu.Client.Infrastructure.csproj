@@ -44,13 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponentBase.cs" />
-    <Compile Include="IAction.cs" />
-    <Compile Include="IActionResult.cs" />
-    <Compile Include="IComponent.cs" />
-    <Compile Include="NoAction.cs" />
-    <Compile Include="NotAvailableActionResult.cs" />
-    <Compile Include="NotSetComponent.cs" />
+    <Compile Include="Actions\ActionBase.cs" />
+    <Compile Include="Actions\CompositeActionResult.cs" />
+    <Compile Include="Actions\LoadAction.cs" />
+    <Compile Include="Components\ComponentUtilities.cs" />
+    <Compile Include="Components\Strategies\IComponentStrategy.cs" />
+    <Compile Include="Components\Strategies\NoMatchPropagationStrategy.cs" />
+    <Compile Include="Components\ComponentBase.cs" />
+    <Compile Include="Actions\IAction.cs" />
+    <Compile Include="Actions\IActionResult.cs" />
+    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="Actions\NoAction.cs" />
+    <Compile Include="Actions\NotAvailableActionResult.cs" />
+    <Compile Include="Components\NotSetComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

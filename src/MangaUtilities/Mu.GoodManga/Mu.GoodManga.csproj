@@ -48,6 +48,7 @@
     <Compile Include="GoodMangaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\GoodMangaSearchService.cs" />
+    <Compile Include="Search\GoodMangaSearchTask.cs" />
     <Compile Include="Search\SearchManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\Mu.Client.Wpf.Infrastructure\Mu.Client.Wpf.Infrastructure.csproj">
       <Project>{6402C917-DB32-45B9-AE5D-52186CACEF9C}</Project>
       <Name>Mu.Client.Wpf.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mu.Core\Mu.Core.csproj">
+      <Project>{A7FCBBA8-C810-43FD-AAFB-9A62250E85EF}</Project>
+      <Name>Mu.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mu.Main\Mu.Main.csproj">
       <Project>{2C19DF40-6A14-43B6-BCD5-8824FB7B235F}</Project>

@@ -1,8 +1,7 @@
 ﻿<Application x:Class="MangaSharp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mangaSharp="clr-namespace:MangaSharp"
-             StartupUri="MainWindow.xaml">
+             xmlns:mangaSharp="clr-namespace:MangaSharp">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

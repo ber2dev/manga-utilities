@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Windows;
 using Mu.Client.Infrastructure;
+using Mu.Client.Infrastructure.Actions;
+using Mu.Client.Infrastructure.Components;
 using Mu.GoodManga.Ui.Wpf;
 using Mu.Main;
 
@@ -8,41 +10,22 @@ namespace MangaSharp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : IComponent
+    public partial class MainWindow
     {
         public MainWindow(IComponent pParent = null)
+            : base(pParent)
         {
             InitializeComponent();
             var mainManager = new MainManager(this);
-            TabControl.Items.Add(new TabController(mainManager));
+            TabControl.Items.Add(new GoodMangaTabController(mainManager));
         }
 
-        public IActionResult Execute(IAction pAction)
+        private void MainWindow_OnLoaded(object pSender, RoutedEventArgs pE)
         {
-            return new NotAvailableActionResult();
-        }
-
-        public IEnumerable<IComponent> GetChildren()
-        {
-            return new List<IComponent>();
-        }
-
-        public IComponent GetParent()
-        {
-            return NotSetComponent.INSTANCE;
-        }
-
-        public void Update(object pState)
-        {
-        }
-
-        public void AddComponent(IComponent pComponent)
-        {
-        }
-
-        public bool RemoveComponent(IComponent pComponent)
-        {
-            return false;
+            foreach (var child in GetChildren())
+            {
+                child.Execute(new LoadAction(this));
+            }
         }
     }
 }

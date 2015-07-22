@@ -43,50 +43,50 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Download\Controller.xaml.cs">
-      <DependentUpon>Controller.xaml</DependentUpon>
+    <Compile Include="Download\DownloadController.xaml.cs">
+      <DependentUpon>DownloadController.xaml</DependentUpon>
     </Compile>
     <Compile Include="Download\ParametersController.xaml.cs">
       <DependentUpon>ParametersController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Download\TabController.xaml.cs">
-      <DependentUpon>TabController.xaml</DependentUpon>
+    <Compile Include="Download\DownloadTabController.xaml.cs">
+      <DependentUpon>DownloadTabController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Reading\Controller.xaml.cs">
-      <DependentUpon>Controller.xaml</DependentUpon>
+    <Compile Include="Reading\ReaderController.xaml.cs">
+      <DependentUpon>ReaderController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Reading\TabController.xaml.cs">
-      <DependentUpon>TabController.xaml</DependentUpon>
+    <Compile Include="Reading\ReaderTabController.xaml.cs">
+      <DependentUpon>ReaderTabController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Search\Controller.xaml.cs">
-      <DependentUpon>Controller.xaml</DependentUpon>
+    <Compile Include="Search\SearchController.xaml.cs">
+      <DependentUpon>SearchController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Search\TabController.xaml.cs">
-      <DependentUpon>TabController.xaml</DependentUpon>
+    <Compile Include="Search\SearchTabController.xaml.cs">
+      <DependentUpon>SearchTabController.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TabController.xaml.cs">
-      <DependentUpon>TabController.xaml</DependentUpon>
+    <Compile Include="GoodMangaTabController.xaml.cs">
+      <DependentUpon>GoodMangaTabController.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Download\Controller.xaml">
+    <Page Include="Download\DownloadController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Reading\Controller.xaml">
+    <Page Include="Reading\ReaderController.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Reading\TabController.xaml">
+    <Page Include="Reading\ReaderTabController.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Search\Controller.xaml">
+    <Page Include="Search\SearchController.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Search\TabController.xaml">
+    <Page Include="Search\SearchTabController.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,13 +98,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Download\TabController.xaml">
+    <Page Include="Download\DownloadTabController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="TabController.xaml">
+    <Page Include="GoodMangaTabController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
