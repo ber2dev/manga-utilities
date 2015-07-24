@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 using Mu.Client.Infrastructure;
 using Mu.Client.Infrastructure.Actions;
@@ -66,6 +67,12 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
         public bool RemoveComponent(IComponent pComponent)
         {
             return _children.Remove(pComponent);
+        }
+
+        protected IActionResult ExecuteToChildren(IAction pAction)
+        {
+            var childrenResults = ComponentUtilities.ExecuteToChildren(this, pAction) ?? new IActionResult[0];
+            return new CompositeActionResult(childrenResults.ToArray());
         }
 
         protected bool IsActionSource(IAction pAction)

@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="MainManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\GetPageParameters.cs" />
+    <Compile Include="Search\IPageGetterService.cs" />
     <Compile Include="Search\ISearchService.cs" />
     <Compile Include="Search\SearchEngine.cs" />
     <Compile Include="Search\SearchEngine.singleton.cs" />

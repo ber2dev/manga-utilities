@@ -8,7 +8,7 @@ using Mu.Main.Search;
 
 namespace Mu.GoodManga.Search
 {
-    public class SearchManager : ComponentBase, IObserver<ISearchResult>
+    public class SearchManager : ComponentBase, ISearchObserver
     {
         private readonly GoodMangaSearchService _searchService;
 
@@ -25,8 +25,7 @@ namespace Mu.GoodManga.Search
             if (pAction is LoadAction)
             {
                 _searchService.Start();
-                var childrenResults = ComponentUtilities.ExecuteToChildren(this, new LoadAction(this)) ?? new IActionResult[0];
-                return new CompositeActionResult(childrenResults.ToArray());
+                return ExecuteToChildren(new LoadAction(this));
             }
             else if (pAction is WebSearchAction)
             {
@@ -39,18 +38,18 @@ namespace Mu.GoodManga.Search
 
         public void OnNext(ISearchResult value)
         {
-            ComponentUtilities.ExecuteToChildren(this,
-                new AddMangaAction(this, (value as GoodMangaSearchResult).MangaInformation));
+            ExecuteToChildren(
+                new AddMangaAction(
+                    this, 
+                    (value as GoodMangaSearchResult).MangaInformation));
         }
 
         public void OnError(Exception error)
         {
-            throw new NotImplementedException();
         }
 
         public void OnCompleted()
         {
-            throw new NotImplementedException();
         }
     }
 }

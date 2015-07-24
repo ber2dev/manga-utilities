@@ -56,6 +56,9 @@
     <Compile Include="Reading\StartReadAction.cs" />
     <Compile Include="Search\AddMangaAction.cs" />
     <Compile Include="Search\ChapterInformation.cs" />
+    <Compile Include="Search\GoodMangaGetPageResult.cs" />
+    <Compile Include="Search\GoodMangaGetPageTask.cs" />
+    <Compile Include="Search\GoodMangaPageGetterService.cs" />
     <Compile Include="Search\GoodMangaSearchResult.cs" />
     <Compile Include="Search\GoodMangaSearchService.cs" />
     <Compile Include="Search\GoodMangaSearchTask.cs" />

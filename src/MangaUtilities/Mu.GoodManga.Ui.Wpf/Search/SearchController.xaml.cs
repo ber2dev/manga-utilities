@@ -22,8 +22,7 @@ namespace Mu.GoodManga.Ui.Wpf.Search
         {
             if (pAction is LoadAction)
             {
-                var childrenResults = ComponentUtilities.ExecuteToChildren(this, new LoadAction(this)) ?? new IActionResult[0];
-                return new CompositeActionResult(childrenResults.ToArray());
+                return ExecuteToChildren(new LoadAction(this));
             }
             if (pAction is AddMangaAction)
             {
