@@ -21,7 +21,7 @@ namespace Mu.Client.Infrastructure.Components
             var children = pComponent.GetChildren();
             if (children != null)
             {
-                var checkedChildren = children.Where(x => !pCheckSource || ReferenceEquals(x, pAction.GetSource()));
+                var checkedChildren = children.Where(x => !pCheckSource || !ReferenceEquals(x, pAction.GetSource()));
                 foreach (var child in checkedChildren)
                 {
                     var r = child.Execute(pAction);
@@ -53,7 +53,7 @@ namespace Mu.Client.Infrastructure.Components
             var result = new List<IActionResult>();
 
             var parent = pComponent.GetParent();
-            if (parent != null && (!pCheckSource || ReferenceEquals(parent, pAction.GetSource())))
+            if (parent != null && (!pCheckSource || !ReferenceEquals(parent, pAction.GetSource())))
             {
                 var r = parent.Execute(pAction);
                 if (r != null && !(r is NotAvailableActionResult))

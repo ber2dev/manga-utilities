@@ -52,6 +52,15 @@
     <Compile Include="Download\DownloadTabController.xaml.cs">
       <DependentUpon>DownloadTabController.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reading\ChapterController.xaml.cs">
+      <DependentUpon>ChapterController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reading\MangaReaderController.xaml.cs">
+      <DependentUpon>MangaReaderController.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reading\PageController.xaml.cs">
+      <DependentUpon>PageController.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reading\ReaderController.xaml.cs">
       <DependentUpon>ReaderController.xaml</DependentUpon>
     </Compile>
@@ -73,6 +82,18 @@
     <Page Include="Download\DownloadController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reading\PageController.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reading\ChapterController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reading\MangaReaderController.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Reading\ReaderController.xaml">
       <SubType>Designer</SubType>

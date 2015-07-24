@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-8-717993490
+111590691591
 
-131210255490
+16-227334296
 161907603297
-Download\DownloadController.xaml;Reading\ReaderController.xaml;Reading\ReaderTabController.xaml;Search\SearchController.xaml;Search\SearchTabController.xaml;Download\ParametersController.xaml;Download\DownloadTabController.xaml;GoodMangaTabController.xaml;
+Download\DownloadController.xaml;Reading\PageController.xaml;Reading\ChapterController.xaml;Reading\MangaReaderController.xaml;Reading\ReaderController.xaml;Reading\ReaderTabController.xaml;Search\SearchController.xaml;Search\SearchTabController.xaml;Download\ParametersController.xaml;Download\DownloadTabController.xaml;GoodMangaTabController.xaml;
 
-False
+True
 

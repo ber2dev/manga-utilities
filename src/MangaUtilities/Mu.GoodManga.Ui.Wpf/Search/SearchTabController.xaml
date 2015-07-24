@@ -8,5 +8,4 @@
              mc:Ignorable="d"
              Header="Search"
              d:DesignHeight="300" d:DesignWidth="300">
-    <search:SearchController />
 </ui:TabItemBase>

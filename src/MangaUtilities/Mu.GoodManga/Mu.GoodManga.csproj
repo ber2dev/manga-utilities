@@ -47,8 +47,20 @@
     <Compile Include="Actions\WebSearchAction.cs" />
     <Compile Include="GoodMangaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reading\ChapterManager.cs" />
+    <Compile Include="Reading\MangaReaderManager.cs" />
+    <Compile Include="Reading\PageManager.cs" />
+    <Compile Include="Reading\ReaderManager.cs" />
+    <Compile Include="Reading\ReadingManager.cs" />
+    <Compile Include="Reading\ReadMangaAction.cs" />
+    <Compile Include="Reading\StartReadAction.cs" />
+    <Compile Include="Search\AddMangaAction.cs" />
+    <Compile Include="Search\ChapterInformation.cs" />
+    <Compile Include="Search\GoodMangaSearchResult.cs" />
     <Compile Include="Search\GoodMangaSearchService.cs" />
     <Compile Include="Search\GoodMangaSearchTask.cs" />
+    <Compile Include="Search\MangaInformation.cs" />
+    <Compile Include="Search\SearchingManager.cs" />
     <Compile Include="Search\SearchManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Download\" />
-    <Folder Include="Reading\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

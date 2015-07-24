@@ -14,11 +14,14 @@ namespace Mu.Core.Common.Service.Async
 
         private bool _isRunning;
 
-        protected AsyncServiceBase()
+        protected AsyncServiceBase(string pThreadName)
         {
             _taskCollection = new TaskCollection();
             _propertyLock = new object();
-            _thread = new Thread(ThreadCore);
+            _thread = new Thread(ThreadCore)
+            {
+                IsBackground = true
+            };
         }
 
         public void Start()
@@ -52,18 +55,18 @@ namespace Mu.Core.Common.Service.Async
 
         protected bool HasTask
         {
-            get
-            {
-                lock (TaskCollection)
-                {
-                    return TaskCollection.Any();
-                }
-            }
+            get { return TaskCollection.Any(); }
         }
 
         protected TaskCollection TaskCollection
         {
-            get { return _taskCollection; }
+            get
+            {
+                lock (_propertyLock)
+                {
+                    return _taskCollection;
+                }
+            }
         }
 
         protected virtual void OnTaskDone(ITask pTask)

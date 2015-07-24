@@ -6,7 +6,5 @@
              xmlns:ui="clr-namespace:Mu.Client.Wpf.Infrastructure.Ui;assembly=Mu.Client.Wpf.Infrastructure"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+    <TabControl x:Name="MangaReaderTabControl" TabStripPlacement="Bottom" />
 </ui:UserControlBase>
