@@ -5,8 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="clr-namespace:Mu.Client.Wpf.Infrastructure.Ui;assembly=Mu.Client.Wpf.Infrastructure"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ListView x:Name="ChaptersList" />
+        
+        <TabControl x:Name="ReadingChaptersTabControl" Grid.Column="1" TabStripPlacement="Right" />
+        
     </Grid>
 </ui:UserControlBase>

@@ -50,6 +50,7 @@
     <Compile Include="Reading\ChapterManager.cs" />
     <Compile Include="Reading\MangaReaderManager.cs" />
     <Compile Include="Reading\PageManager.cs" />
+    <Compile Include="Reading\ReadChapterAction.cs" />
     <Compile Include="Reading\ReaderManager.cs" />
     <Compile Include="Reading\ReadingManager.cs" />
     <Compile Include="Reading\ReadMangaAction.cs" />

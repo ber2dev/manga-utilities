@@ -5,8 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="clr-namespace:Mu.Client.Wpf.Infrastructure.Ui;assembly=Mu.Client.Wpf.Infrastructure"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="1024">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
             
+        </Grid>
+        
+        <ListView x:Name="PagesListView" Grid.Column="1" />
+        
     </Grid>
 </ui:UserControlBase>

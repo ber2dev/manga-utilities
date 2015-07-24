@@ -34,6 +34,11 @@ namespace Mu.Client.Infrastructure.Components
             return _componentStrategy.Execute(pAction);
         }
 
+        public bool HasChildren()
+        {
+            return GetChildren().Any();
+        }
+
         public IEnumerable<IComponent> GetChildren()
         {
             return _children;
