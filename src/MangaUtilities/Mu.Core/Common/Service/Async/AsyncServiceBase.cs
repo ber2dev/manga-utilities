@@ -55,7 +55,13 @@ namespace Mu.Core.Common.Service.Async
 
         protected bool HasTask
         {
-            get { return TaskCollection.Any(); }
+            get
+            {
+                lock (_propertyLock)
+                {
+                    return TaskCollection.Any();
+                }
+            }
         }
 
         protected TaskCollection TaskCollection

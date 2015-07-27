@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Windows.Controls;
-using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
 using Mu.GoodManga.Actions;
 using Mu.GoodManga.Search;
@@ -18,7 +17,7 @@ namespace Mu.GoodManga.Ui.Wpf.Search
             InitializeComponent();
         }
 
-        public void Load(LoadAction pAction)
+        public void Load(object pAction)
         {
             // do nothing   
         }

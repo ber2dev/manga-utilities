@@ -5,5 +5,6 @@
         IManager GetManager();
         void SetManager(IManager pManager);
         bool IsManager(IManager pManager);
+        void Load(object pState);
     }
 }

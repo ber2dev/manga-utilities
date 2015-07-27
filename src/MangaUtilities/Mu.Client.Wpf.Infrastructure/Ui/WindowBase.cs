@@ -37,5 +37,9 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
         {
             return ReferenceEquals(pManager, GetManager());
         }
+
+        public virtual void Load(object pState)
+        {
+        }
     }
 }

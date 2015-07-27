@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Controllers;
@@ -13,6 +15,7 @@ namespace Mu.Client.Infrastructure.Components
         private readonly IComponentStrategy _componentStrategy;
         private readonly IList<IManager> _children;
         private readonly IManager _parent;
+        private readonly IDictionary<Type, IController> _controllers;
 
         protected ManagerBase(
             IManager pParent = null,
@@ -21,6 +24,7 @@ namespace Mu.Client.Infrastructure.Components
             _parent = (pParent ?? NotSetManager.INSTANCE);
             _children = new List<IManager>();
             _componentStrategy = (pComponentStrategy ?? new NoMatchPropagationStrategy(this));
+            _controllers = new ConcurrentDictionary<Type, IController>();
 
             Initialize();
         }
@@ -72,33 +76,65 @@ namespace Mu.Client.Infrastructure.Components
 
         public void SetController(IController pController)
         {
-            if (pController.IsManager(this))
+            ArgumentsValidation.NotNull(pController, "pController");
+
+            if (_controllers.ContainsKey(pController.GetType()))
             {
                 return;
             }
 
-            pController.SetManager(this);
+            _controllers.Add(pController.GetType(), pController);
         }
 
         public IController GetController(Type pControllerType)
         {
-            throw new NotImplementedException();
+            return GetControllerChecked(pControllerType);
         }
 
         public TController GetController<TController>() where TController : IController
         {
-            throw new NotImplementedException();
+            return (TController)GetController(typeof(TController));
         }
 
         public IEnumerable<IController> GetControllers()
         {
-            throw new NotImplementedException();
+            return new ReadOnlyCollection<IController>(_controllers.Values.ToArray());
         }
 
         protected IActionResult ExecuteToChildren(IAction pAction)
         {
             var childrenResults = ComponentUtilities.ExecuteToChildren(this, pAction) ?? new IActionResult[0];
             return new CompositeActionResult(childrenResults.ToArray());
+        }
+
+        protected IController GetControllerChecked(Type pControllerType)
+        {
+            var controller = InternalGetController(pControllerType);
+            if (controller == null)
+            {
+                throw new InvalidOperationException(string.Format("Missing Controller: {0}", pControllerType.FullName));
+            }
+
+            return controller;
+        }
+
+        protected IController InternalGetController(Type pControllerType)
+        {
+            ArgumentsValidation.NotNull(pControllerType, "pControllerType");
+
+            IController controller;
+            if (_controllers.TryGetValue(pControllerType, out controller))
+            {
+                return controller;
+            }
+
+            var key = _controllers.Keys.FirstOrDefault(x => x.GetInterface(pControllerType.Name) != null);
+            if (key != null)
+            {
+                return _controllers[key];
+            }
+
+            return null;
         }
 
         protected bool IsActionSource(IAction pAction)

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
 using Mu.Core.Search;
@@ -36,20 +35,18 @@ namespace Mu.GoodManga.Search
             return base.Execute(pAction);
         }
 
-        public void OnNext(ISearchResult value)
+        public void OnNext(ISearchResult pValue)
         {
-            ExecuteToChildren(
-                new AddMangaAction(
-                    this, 
-                    (value as GoodMangaSearchResult).MangaInformation));
+            GetController<ISearchController>().AddManga(((GoodMangaSearchResult) pValue).MangaInformation);
         }
 
-        public void OnError(Exception error)
+        public void OnError(Exception pError)
         {
         }
 
         public void OnCompleted()
         {
+
         }
     }
 }
