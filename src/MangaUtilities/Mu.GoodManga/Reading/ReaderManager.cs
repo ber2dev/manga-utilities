@@ -16,7 +16,7 @@ namespace Mu.GoodManga.Reading
         {
         }
 
-        public override IActionResult Execute(IAction pAction)
+        public override IActionResult Execute(object pSouce, IAction pAction)
         {
             if (pAction is LoadAction)
             {
@@ -29,7 +29,7 @@ namespace Mu.GoodManga.Reading
                 return ReadManga(readMangaAction);
             }
 
-            return base.Execute(pAction);
+            return base.Execute(pSouce, pAction);
         }
 
         private IActionResult ReadManga(ReadMangaAction pAction)
@@ -67,7 +67,7 @@ namespace Mu.GoodManga.Reading
             ArgumentsValidation.NotNull(pChapter, "pChapter");
             ArgumentsValidation.NotNull(pItemToActivate, "pItemToActivate");
 
-            return pItemToActivate.Execute(new StartReadAction(this, pManga, pChapter));
+            return pItemToActivate.Execute(this, new StartReadAction(this, pManga, pChapter));
         }
 
         private MangaReaderManager CreateNewReader(MangaInformation pManga)

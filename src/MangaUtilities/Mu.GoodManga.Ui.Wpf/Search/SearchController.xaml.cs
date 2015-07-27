@@ -46,7 +46,7 @@ namespace Mu.GoodManga.Ui.Wpf.Search
                 return;
             }
 
-            man.Execute(new WebSearchAction(SearchKeyTextBox.Text));
+            man.Execute(this, new WebSearchAction(SearchKeyTextBox.Text));
         }
 
         private void FoundItemsListView_OnMouseDoubleClick(object pSender, MouseButtonEventArgs pE)
@@ -57,11 +57,10 @@ namespace Mu.GoodManga.Ui.Wpf.Search
                 return;
             }
 
-            man.Execute(
-                new ReadMangaAction(
-                    this,
-                    new MangaInformation {Sid = FoundItemsListView.SelectedItem.ToString()},
-                    null));
+            man.Execute(this, new ReadMangaAction(
+                this,
+                new MangaInformation {Sid = FoundItemsListView.SelectedItem.ToString()},
+                null));
         }
     }
 }

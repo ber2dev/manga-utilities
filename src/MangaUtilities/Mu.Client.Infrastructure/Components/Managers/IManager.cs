@@ -7,7 +7,7 @@ namespace Mu.Client.Infrastructure.Components.Managers
 {
     public interface IManager
     {
-        IActionResult Execute(IAction pAction);
+        IActionResult Execute(object pSouce, IAction pAction);
         IEnumerable<IManager> GetChildren();
         IManager GetParent();
         void AddManager(IManager pManager);

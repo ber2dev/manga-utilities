@@ -13,7 +13,7 @@ namespace Mu.Client.Infrastructure.Components.Managers
         {
         }
 
-        public IActionResult Execute(IAction pAction)
+        public IActionResult Execute(object pSouce, IAction pAction)
         {
             return new NotAvailableActionResult();
         }

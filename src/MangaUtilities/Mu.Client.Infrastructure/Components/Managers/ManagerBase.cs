@@ -29,7 +29,7 @@ namespace Mu.Client.Infrastructure.Components.Managers
             Initialize();
         }
 
-        public virtual IActionResult Execute(IAction pAction)
+        public virtual IActionResult Execute(object pSouce, IAction pAction)
         {
             if (!CanExecute(pAction))
             {

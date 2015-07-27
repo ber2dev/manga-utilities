@@ -15,14 +15,14 @@ namespace Mu.GoodManga.Reading
 
         public ChapterInformation Chapter { get; set; }
 
-        public override IActionResult Execute(IAction pAction)
+        public override IActionResult Execute(object pSouce, IAction pAction)
         {
             if (pAction is LoadAction)
             {
                 return ExecuteToChildren(new LoadAction(this));
             }
 
-            return base.Execute(pAction);
+            return base.Execute(pSouce, pAction);
         }
     }
 }

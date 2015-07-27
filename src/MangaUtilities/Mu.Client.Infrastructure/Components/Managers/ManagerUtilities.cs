@@ -24,7 +24,7 @@ namespace Mu.Client.Infrastructure.Components.Managers
                 var checkedChildren = children.Where(x => !pCheckSource || !ReferenceEquals(x, pAction.GetSource()));
                 foreach (var child in checkedChildren)
                 {
-                    var r = child.Execute(pAction);
+                    var r = child.Execute(pManager, pAction);
                     if (r == null || r is NotAvailableActionResult)
                     {
                         continue;
@@ -55,7 +55,7 @@ namespace Mu.Client.Infrastructure.Components.Managers
             var parent = pManager.GetParent();
             if (parent != null && (!pCheckSource || !ReferenceEquals(parent, pAction.GetSource())))
             {
-                var r = parent.Execute(pAction);
+                var r = parent.Execute(pManager, pAction);
                 if (r != null && !(r is NotAvailableActionResult))
                 {
                     result.Add(r);

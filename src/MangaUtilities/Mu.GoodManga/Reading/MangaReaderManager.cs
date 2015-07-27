@@ -19,7 +19,7 @@ namespace Mu.GoodManga.Reading
 
         public MangaInformation Manga { get; private set; }
 
-        public override IActionResult Execute(IAction pAction)
+        public override IActionResult Execute(object pSouce, IAction pAction)
         {
             if (pAction is LoadAction)
             {
@@ -31,7 +31,7 @@ namespace Mu.GoodManga.Reading
                 return ExecuteToChildren(pAction);
             }
 
-            return base.Execute(pAction);
+            return base.Execute(pSouce, pAction);
         }
     }
 }

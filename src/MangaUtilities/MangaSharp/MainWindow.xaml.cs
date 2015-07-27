@@ -22,7 +22,7 @@ namespace MangaSharp
 
         private void MainWindow_OnLoaded(object pSender, RoutedEventArgs pE)
         {
-            GetManager().Execute(new LoadAction(this));
+            GetManager().Execute(this, new LoadAction(this));
         }
     }
 }

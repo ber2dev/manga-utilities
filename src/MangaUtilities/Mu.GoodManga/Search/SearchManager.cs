@@ -20,7 +20,7 @@ namespace Mu.GoodManga.Search
             SearchEngine.Instance.Register(_searchService);
         }
 
-        public override IActionResult Execute(IAction pAction)
+        public override IActionResult Execute(object pSouce, IAction pAction)
         {
             if (pAction is LoadAction)
             {
@@ -35,7 +35,7 @@ namespace Mu.GoodManga.Search
                 return GetCannotExecuteActionResult(pAction);
             }
 
-            return base.Execute(pAction);
+            return base.Execute(pSouce, pAction);
         }
 
         public void OnNext(ISearchResult pValue)
