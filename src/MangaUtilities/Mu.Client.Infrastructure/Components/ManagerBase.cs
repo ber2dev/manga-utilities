@@ -31,9 +31,9 @@ namespace Mu.Client.Infrastructure.Components
 
         public virtual IActionResult Execute(IAction pAction)
         {
-            if (IsActionSource(pAction))
+            if (!CanExecute(pAction))
             {
-                return new NotAvailableActionResult();
+                return GetCannotExecuteActionResult(pAction);
             }
 
             return _componentStrategy.Execute(pAction);
@@ -103,7 +103,7 @@ namespace Mu.Client.Infrastructure.Components
 
         protected IActionResult ExecuteToChildren(IAction pAction)
         {
-            var childrenResults = ComponentUtilities.ExecuteToChildren(this, pAction) ?? new IActionResult[0];
+            var childrenResults = ManagerUtilities.ExecuteToChildren(this, pAction) ?? new IActionResult[0];
             return new CompositeActionResult(childrenResults.ToArray());
         }
 
@@ -142,6 +142,16 @@ namespace Mu.Client.Infrastructure.Components
             ArgumentsValidation.NotNull(pAction, "pAction");
 
             return pAction != null && ReferenceEquals(pAction.GetSource(), this);
+        }
+
+        protected virtual bool CanExecute(IAction pAction)
+        {
+            return !IsActionSource(pAction);
+        }
+
+        protected virtual IActionResult GetCannotExecuteActionResult(IAction pAction)
+        {
+            return new NotAvailableActionResult();
         }
 
         private void Initialize()

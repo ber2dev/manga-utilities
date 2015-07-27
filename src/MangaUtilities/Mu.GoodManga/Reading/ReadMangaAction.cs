@@ -9,8 +9,15 @@ namespace Mu.GoodManga.Reading
         public const string CHAPTER_INFORMATION_PARAMETER = "CHAPTER_INFORMATION";
 
         public ReadMangaAction(object pSource)
+            : this(pSource, null, null)
+        {
+        }
+
+        public ReadMangaAction(object pSource, MangaInformation pManga, ChapterInformation pChapter)
             : base(pSource)
         {
+            Manga = pManga;
+            Chapter = pChapter;
         }
 
         public MangaInformation Manga

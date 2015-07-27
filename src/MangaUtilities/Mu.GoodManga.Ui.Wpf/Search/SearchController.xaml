@@ -20,7 +20,7 @@
                 AcceptsReturn="True"/>
         </Grid>
         <Grid>
-            <ListView x:Name="FoundItemsListView" />
+            <ListView x:Name="FoundItemsListView" MouseDoubleClick="FoundItemsListView_OnMouseDoubleClick" />
         </Grid>
     </DockPanel>
 </ui:UserControlBase>

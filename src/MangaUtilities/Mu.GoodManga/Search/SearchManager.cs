@@ -26,7 +26,8 @@ namespace Mu.GoodManga.Search
                 _searchService.Start();
                 return ExecuteToChildren(new LoadAction(this));
             }
-            else if (pAction is WebSearchAction)
+
+            if (pAction is WebSearchAction)
             {
                 _searchService.Search(
                     new SearchParameters(((WebSearchAction)pAction).GetParameter<string>("SearchKey")));

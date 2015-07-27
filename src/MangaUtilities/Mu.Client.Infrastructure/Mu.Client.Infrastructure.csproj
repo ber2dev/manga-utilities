@@ -47,7 +47,7 @@
     <Compile Include="Actions\ActionBase.cs" />
     <Compile Include="Actions\CompositeActionResult.cs" />
     <Compile Include="Actions\LoadAction.cs" />
-    <Compile Include="Components\ComponentUtilities.cs" />
+    <Compile Include="Components\ManagerUtilities.cs" />
     <Compile Include="Components\Controllers\IController.cs" />
     <Compile Include="Components\Strategies\IComponentStrategy.cs" />
     <Compile Include="Components\Strategies\NoMatchPropagationStrategy.cs" />

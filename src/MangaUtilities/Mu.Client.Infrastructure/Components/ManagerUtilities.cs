@@ -6,7 +6,7 @@ using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Components
 {
-    public static class ComponentUtilities
+    public static class ManagerUtilities
     {
         public static IEnumerable<IActionResult> ExecuteToChildren(
             IManager pManager, 

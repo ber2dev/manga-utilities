@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Mu.Client.Infrastructure.Components;
 using Mu.GoodManga.Actions;
+using Mu.GoodManga.Reading;
 using Mu.GoodManga.Search;
 
 namespace Mu.GoodManga.Ui.Wpf.Search
@@ -44,6 +46,21 @@ namespace Mu.GoodManga.Ui.Wpf.Search
             }
 
             man.Execute(new WebSearchAction(SearchKeyTextBox.Text));
+        }
+
+        private void FoundItemsListView_OnMouseDoubleClick(object pSender, MouseButtonEventArgs pE)
+        {
+            var man = GetManager();
+            if (man == null)
+            {
+                return;
+            }
+
+            man.Execute(
+                new ReadMangaAction(
+                    this,
+                    new MangaInformation {Sid = FoundItemsListView.SelectedItem.ToString()},
+                    null));
         }
     }
 }

@@ -43,12 +43,12 @@ namespace Mu.Client.Infrastructure.Components.Strategies
 
         private IEnumerable<IActionResult> ExecuteToChildren(IAction pAction)
         {
-            return ComponentUtilities.ExecuteToChildren(_manager, pAction);
+            return ManagerUtilities.ExecuteToChildren(_manager, pAction);
         }
 
         private IEnumerable<IActionResult> ExecuteToParent(IAction pAction)
         {
-            return ComponentUtilities.ExecuteToParent(_manager, pAction);
+            return ManagerUtilities.ExecuteToParent(_manager, pAction);
         }
     }
 }

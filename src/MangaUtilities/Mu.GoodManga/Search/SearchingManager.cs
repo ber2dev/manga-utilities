@@ -12,6 +12,11 @@ namespace Mu.GoodManga.Search
 
         public override IActionResult Execute(IAction pAction)
         {
+            if (!CanExecute(pAction))
+            {
+                return GetCannotExecuteActionResult(pAction);
+            }
+
             if (pAction is LoadAction)
             {
                 return ExecuteToChildren(new LoadAction(this));
