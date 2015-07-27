@@ -47,17 +47,17 @@
     <Compile Include="Actions\ActionBase.cs" />
     <Compile Include="Actions\CompositeActionResult.cs" />
     <Compile Include="Actions\LoadAction.cs" />
-    <Compile Include="Components\ManagerUtilities.cs" />
+    <Compile Include="Components\Managers\ManagerUtilities.cs" />
     <Compile Include="Components\Controllers\IController.cs" />
-    <Compile Include="Components\Strategies\IComponentStrategy.cs" />
-    <Compile Include="Components\Strategies\NoMatchPropagationStrategy.cs" />
-    <Compile Include="Components\ManagerBase.cs" />
+    <Compile Include="Components\Managers\Strategies\IComponentStrategy.cs" />
+    <Compile Include="Components\Managers\Strategies\NoMatchPropagationStrategy.cs" />
+    <Compile Include="Components\Managers\ManagerBase.cs" />
     <Compile Include="Actions\IAction.cs" />
     <Compile Include="Actions\IActionResult.cs" />
-    <Compile Include="Components\IManager.cs" />
+    <Compile Include="Components\Managers\IManager.cs" />
     <Compile Include="Actions\NoAction.cs" />
     <Compile Include="Actions\NotAvailableActionResult.cs" />
-    <Compile Include="Components\NotSetManager.cs" />
+    <Compile Include="Components\Managers\NotSetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

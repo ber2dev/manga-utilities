@@ -8,7 +8,7 @@ using Mu.Client.Infrastructure.Components.Controllers;
 using Mu.Client.Infrastructure.Components.Strategies;
 using Mu.Core.Common.Validation;
 
-namespace Mu.Client.Infrastructure.Components
+namespace Mu.Client.Infrastructure.Components.Managers
 {
     public class ManagerBase : IManager
     {

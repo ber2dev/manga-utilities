@@ -4,7 +4,7 @@ using System.Linq;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Core.Common.Validation;
 
-namespace Mu.Client.Infrastructure.Components
+namespace Mu.Client.Infrastructure.Components.Managers
 {
     public static class ManagerUtilities
     {

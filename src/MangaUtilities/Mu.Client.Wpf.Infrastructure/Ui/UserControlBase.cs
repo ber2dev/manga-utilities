@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Controllers;
+using Mu.Client.Infrastructure.Components.Managers;
 
 namespace Mu.Client.Wpf.Infrastructure.Ui
 {

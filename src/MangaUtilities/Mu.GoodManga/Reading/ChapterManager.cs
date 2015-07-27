@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
+using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Search;
 
 namespace Mu.GoodManga.Reading

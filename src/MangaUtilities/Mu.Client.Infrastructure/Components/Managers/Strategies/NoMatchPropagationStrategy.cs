@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Mu.Client.Infrastructure.Actions;
+using Mu.Client.Infrastructure.Components.Managers;
 
 namespace Mu.Client.Infrastructure.Components.Strategies
 {

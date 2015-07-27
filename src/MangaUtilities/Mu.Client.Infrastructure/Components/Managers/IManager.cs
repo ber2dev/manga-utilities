@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Controllers;
 
-namespace Mu.Client.Infrastructure.Components
+namespace Mu.Client.Infrastructure.Components.Managers
 {
     public interface IManager
     {

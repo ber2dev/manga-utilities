@@ -1,4 +1,6 @@
-﻿namespace Mu.Client.Infrastructure.Components.Controllers
+﻿using Mu.Client.Infrastructure.Components.Managers;
+
+namespace Mu.Client.Infrastructure.Components.Controllers
 {
     public interface IController
     {

@@ -2,6 +2,7 @@
 using Mu.Client.Infrastructure;
 using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
+using Mu.Client.Infrastructure.Components.Managers;
 
 namespace MangaSharp
 {

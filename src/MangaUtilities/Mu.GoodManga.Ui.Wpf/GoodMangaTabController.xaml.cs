@@ -1,4 +1,5 @@
 ﻿using Mu.Client.Infrastructure.Components;
+using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Reading;
 using Mu.GoodManga.Search;
 using Mu.GoodManga.Ui.Wpf.Reading;
