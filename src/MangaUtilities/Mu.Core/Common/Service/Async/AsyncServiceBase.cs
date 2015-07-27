@@ -89,7 +89,12 @@ namespace Mu.Core.Common.Service.Async
                     continue;
                 }
 
-                var task = TaskCollection.Dequeue();
+                ITask task;
+                lock (_propertyLock)
+                {
+                    task = TaskCollection.Dequeue();
+                }
+
                 task.Do();
                 OnTaskDone(task);
 
