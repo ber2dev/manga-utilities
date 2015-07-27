@@ -16,5 +16,5 @@ DEBUG;TRACE
 161907603297
 Download\DownloadController.xaml;Reading\PageController.xaml;Reading\ChapterController.xaml;Reading\MangaReaderController.xaml;Reading\ReaderController.xaml;Reading\ReaderTabController.xaml;Search\SearchController.xaml;Search\SearchTabController.xaml;Download\ParametersController.xaml;Download\DownloadTabController.xaml;GoodMangaTabController.xaml;
 
-False
+True
 
