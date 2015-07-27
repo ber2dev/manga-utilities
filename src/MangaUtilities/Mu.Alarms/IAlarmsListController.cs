@@ -3,7 +3,7 @@ using Mu.Client.Infrastructure.Components;
 
 namespace Mu.Alarms
 {
-    public interface IAlarmsListController : IComponent
+    public interface IAlarmsListController : IManager
     {
     }
 }

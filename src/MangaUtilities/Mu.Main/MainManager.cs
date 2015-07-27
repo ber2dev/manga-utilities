@@ -1,15 +1,14 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure.Actions;
+﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
+using Mu.Core.Common.Validation;
 
 namespace Mu.Main
 {
-    public class MainManager : ComponentBase
+    public class MainManager : ManagerBase
     {
-        public MainManager(IComponent pParent)
+        public MainManager(IManager pParent)
             : base(pParent)
         {
-
         }
 
         public override IActionResult Execute(IAction pAction)

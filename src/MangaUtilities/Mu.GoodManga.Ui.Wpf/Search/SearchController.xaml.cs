@@ -10,31 +10,22 @@ namespace Mu.GoodManga.Ui.Wpf.Search
     /// <summary>
     /// Interaction logic for DownloadController.xaml
     /// </summary>
-    public partial class SearchController
+    public partial class SearchController : ISearchController
     {
-        public SearchController(IComponent pParent)
+        public SearchController(IManager pParent)
             : base(pParent)
         {
             InitializeComponent();
         }
 
-        public override IActionResult Execute(IAction pAction)
+        public void Load(LoadAction pAction)
         {
-            if (pAction is LoadAction)
-            {
-                return ExecuteToChildren(new LoadAction(this));
-            }
-            if (pAction is AddMangaAction)
-            {
-                AddManga(pAction as AddMangaAction);
-            }
-
-            return base.Execute(pAction);
+            // do nothing   
         }
 
-        private void AddManga(AddMangaAction pAddMangaAction)
+        public void AddManga(MangaInformation pManga)
         {
-            FoundItemsListView.Items.Add(pAddMangaAction.Manga.Sid);
+            FoundItemsListView.Items.Add(pManga.Sid);
         }
 
         private void SearchKeyTextBox_OnTextChanged(object pSender, TextChangedEventArgs pE)
@@ -47,7 +38,7 @@ namespace Mu.GoodManga.Ui.Wpf.Search
                 return;
             }
 
-            var man = GetParent();
+            var man = GetManager();
             if (man == null)
             {
                 return;

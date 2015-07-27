@@ -1,24 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Mu.Client.Infrastructure.Actions;
+using Mu.Client.Infrastructure.Components.Controllers;
 using Mu.Client.Infrastructure.Components.Strategies;
 using Mu.Core.Common.Validation;
 
 namespace Mu.Client.Infrastructure.Components
 {
-    public class ComponentBase : IComponent
+    public class ManagerBase : IManager
     {
         private readonly IComponentStrategy _componentStrategy;
-        private readonly IList<IComponent> _children;
-        private readonly IComponent _parent;
+        private readonly IList<IManager> _children;
+        private readonly IManager _parent;
 
-        protected ComponentBase(
-            IComponent pParent = null,
+        protected ManagerBase(
+            IManager pParent = null,
             IComponentStrategy pComponentStrategy = null)
         {
-            _parent = (pParent ?? NotSetComponent.INSTANCE);
-            _children = new List<IComponent>();
+            _parent = (pParent ?? NotSetManager.INSTANCE);
+            _children = new List<IManager>();
             _componentStrategy = (pComponentStrategy ?? new NoMatchPropagationStrategy(this));
 
             Initialize();
@@ -39,12 +40,12 @@ namespace Mu.Client.Infrastructure.Components
             return GetChildren().Any();
         }
 
-        public IEnumerable<IComponent> GetChildren()
+        public IEnumerable<IManager> GetChildren()
         {
             return _children;
         }
 
-        public IComponent GetParent()
+        public IManager GetParent()
         {
             return _parent;
         }
@@ -54,19 +55,44 @@ namespace Mu.Client.Infrastructure.Components
             // used by subclasses for state update 
         }
 
-        public void AddComponent(IComponent pComponent)
+        public void AddManager(IManager pManager)
         {
-            if (_children.Contains(pComponent))
+            if (_children.Contains(pManager))
             {
                 return;
             }
 
-            _children.Add(pComponent);
+            _children.Add(pManager);
         }
 
-        public bool RemoveComponent(IComponent pComponent)
+        public bool RemoveManager(IManager pManager)
         {
-            return _children.Remove(pComponent);
+            return _children.Remove(pManager);
+        }
+
+        public void SetController(IController pController)
+        {
+            if (pController.IsManager(this))
+            {
+                return;
+            }
+
+            pController.SetManager(this);
+        }
+
+        public IController GetController(Type pControllerType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TController GetController<TController>() where TController : IController
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IController> GetControllers()
+        {
+            throw new NotImplementedException();
         }
 
         protected IActionResult ExecuteToChildren(IAction pAction)
@@ -84,7 +110,7 @@ namespace Mu.Client.Infrastructure.Components
 
         private void Initialize()
         {
-            GetParent().AddComponent(this);
+            GetParent().AddManager(this);
         }
     }
 }

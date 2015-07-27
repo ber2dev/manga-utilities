@@ -4,10 +4,10 @@ using Mu.Client.Infrastructure.Components;
 
 namespace Mu.GoodManga.Reading
 {
-    public class ReaderManager : ComponentBase
+    public class ReaderManager : ManagerBase
     {
-        public ReaderManager(IComponent pComponent)
-            : base(pComponent)
+        public ReaderManager(IManager pManager)
+            : base(pManager)
         {
         }
 

@@ -5,21 +5,21 @@ namespace Mu.Client.Infrastructure.Components.Strategies
 {
     public class NoMatchPropagationStrategy : IComponentStrategy
     {
-        private readonly IComponent _component;
+        private readonly IManager _manager;
         private readonly bool _toParent;
         private readonly bool _toChildren;
 
-        public NoMatchPropagationStrategy(IComponent pComponent)
-            : this(pComponent, true, false)
+        public NoMatchPropagationStrategy(IManager pManager)
+            : this(pManager, true, false)
         {
         }
 
         public NoMatchPropagationStrategy(
-            IComponent pComponent,
+            IManager pManager,
             bool pToParent,
             bool pToChildren)
         {
-            _component = pComponent;
+            _manager = pManager;
             _toParent = pToParent;
             _toChildren = pToChildren;
         }
@@ -43,12 +43,12 @@ namespace Mu.Client.Infrastructure.Components.Strategies
 
         private IEnumerable<IActionResult> ExecuteToChildren(IAction pAction)
         {
-            return ComponentUtilities.ExecuteToChildren(_component, pAction);
+            return ComponentUtilities.ExecuteToChildren(_manager, pAction);
         }
 
         private IEnumerable<IActionResult> ExecuteToParent(IAction pAction)
         {
-            return ComponentUtilities.ExecuteToParent(_component, pAction);
+            return ComponentUtilities.ExecuteToParent(_manager, pAction);
         }
     }
 }

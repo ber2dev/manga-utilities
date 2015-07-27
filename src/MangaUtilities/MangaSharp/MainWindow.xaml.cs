@@ -9,22 +9,19 @@ namespace MangaSharp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : IMainController
     {
-        public MainWindow(IComponent pParent = null)
-            : base(pParent)
+        public MainWindow(IManager pManager)
+            : base(pManager)
         {
             InitializeComponent();
-            var mainManager = new MainManager(this);
+            var mainManager = new MainManager(GetManager());
             TabControl.Items.Add(new GoodMangaTabController(mainManager));
         }
 
         private void MainWindow_OnLoaded(object pSender, RoutedEventArgs pE)
         {
-            foreach (var child in GetChildren())
-            {
-                child.Execute(new LoadAction(this));
-            }
+            GetManager().Execute(new LoadAction(this));
         }
     }
 }

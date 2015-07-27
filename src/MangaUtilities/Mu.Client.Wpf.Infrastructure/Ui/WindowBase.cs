@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using Mu.Client.Infrastructure;
-using Mu.Client.Infrastructure.Actions;
+﻿using System.Windows;
 using Mu.Client.Infrastructure.Components;
-using Mu.Client.Infrastructure.Components.Strategies;
+using Mu.Client.Infrastructure.Components.Controllers;
 
 namespace Mu.Client.Wpf.Infrastructure.Ui
 {
@@ -12,77 +8,34 @@ namespace Mu.Client.Wpf.Infrastructure.Ui
     /// Base class for a TabItem user control.
     /// For Design purpose it mantains both parameter-less constructor and full constructor
     /// </summary>
-    public class WindowBase : Window, IComponent
+    public class WindowBase : Window, IController
     {
-        private readonly IComponentStrategy _componentStrategy;
-        private readonly IList<IComponent> _children;
-        private readonly IComponent _parent;
+        private IManager _parent;
 
-        protected WindowBase(
-            IComponent pParent = null,
-            IComponentStrategy pComponentStrategy = null)
+        public WindowBase(IManager pManager)
         {
-            _parent = (pParent ?? NotSetComponent.INSTANCE);
-            _children = new List<IComponent>();
-            _componentStrategy = (pComponentStrategy ?? new NoMatchPropagationStrategy(this));
-
-            Initialize();
+            SetManager(pManager);
         }
 
-        public virtual IActionResult Execute(IAction pAction)
+        public WindowBase()
+            : this(null)
         {
-            if (IsActionSource(pAction))
-            {
-                return new NotAvailableActionResult();
-            }
-
-            return _componentStrategy.Execute(pAction);
         }
 
-        public IEnumerable<IComponent> GetChildren()
-        {
-            return _children;
-        }
-
-        public IComponent GetParent()
+        public IManager GetManager()
         {
             return _parent;
         }
 
-        public virtual void Update(object pState)
+        public void SetManager(IManager pManager)
         {
-            // used by subclasses for state update 
+            _parent = (pManager ?? NotSetManager.INSTANCE);
+            _parent.SetController(this);
         }
 
-        public void AddComponent(IComponent pComponent)
+        public bool IsManager(IManager pManager)
         {
-            if (_children.Contains(pComponent))
-            {
-                return;
-            }
-
-            _children.Add(pComponent);
-        }
-
-        public bool RemoveComponent(IComponent pComponent)
-        {
-            return _children.Remove(pComponent);
-        }
-
-        protected IActionResult ExecuteToChildren(IAction pAction)
-        {
-            var childrenResults = ComponentUtilities.ExecuteToChildren(this, pAction) ?? new IActionResult[0];
-            return new CompositeActionResult(childrenResults.ToArray());
-        }
-
-        protected bool IsActionSource(IAction pAction)
-        {
-            return pAction != null && ReferenceEquals(pAction.GetSource(), this);
-        }
-
-        private void Initialize()
-        {
-            GetParent().AddComponent(this);
+            return ReferenceEquals(pManager, GetManager());
         }
     }
 }

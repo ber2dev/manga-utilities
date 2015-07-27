@@ -48,15 +48,16 @@
     <Compile Include="Actions\CompositeActionResult.cs" />
     <Compile Include="Actions\LoadAction.cs" />
     <Compile Include="Components\ComponentUtilities.cs" />
+    <Compile Include="Components\Controllers\IController.cs" />
     <Compile Include="Components\Strategies\IComponentStrategy.cs" />
     <Compile Include="Components\Strategies\NoMatchPropagationStrategy.cs" />
-    <Compile Include="Components\ComponentBase.cs" />
+    <Compile Include="Components\ManagerBase.cs" />
     <Compile Include="Actions\IAction.cs" />
     <Compile Include="Actions\IActionResult.cs" />
-    <Compile Include="Components\IComponent.cs" />
+    <Compile Include="Components\IManager.cs" />
     <Compile Include="Actions\NoAction.cs" />
     <Compile Include="Actions\NotAvailableActionResult.cs" />
-    <Compile Include="Components\NotSetComponent.cs" />
+    <Compile Include="Components\NotSetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +66,7 @@
       <Name>Mu.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

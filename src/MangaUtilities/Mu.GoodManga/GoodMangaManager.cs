@@ -5,9 +5,9 @@ using Mu.GoodManga.Reading;
 
 namespace Mu.GoodManga
 {
-    public class GoodMangaManager : ComponentBase
+    public class GoodMangaManager : ManagerBase
     {
-        public GoodMangaManager(IComponent pParentManager)
+        public GoodMangaManager(IManager pParentManager)
             : base(pParentManager)
         {
         }

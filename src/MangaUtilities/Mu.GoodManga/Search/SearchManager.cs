@@ -8,11 +8,11 @@ using Mu.Main.Search;
 
 namespace Mu.GoodManga.Search
 {
-    public class SearchManager : ComponentBase, ISearchObserver
+    public class SearchManager : ManagerBase, ISearchObserver
     {
         private readonly GoodMangaSearchService _searchService;
 
-        public SearchManager(IComponent pParentManager)
+        public SearchManager(IManager pParentManager)
             : base(pParentManager)
         {
             _searchService = new GoodMangaSearchService();

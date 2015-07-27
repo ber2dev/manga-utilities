@@ -6,9 +6,9 @@ using Mu.GoodManga.Search;
 
 namespace Mu.GoodManga.Reading
 {
-    public class MangaReaderManager : ComponentBase
+    public class MangaReaderManager : ManagerBase
     {
-        public MangaReaderManager(IComponent pParent, MangaInformation pManga)
+        public MangaReaderManager(IManager pParent, MangaInformation pManga)
             : base(pParent)
         {
             ArgumentsValidation.NotNull(pManga, "pManga");

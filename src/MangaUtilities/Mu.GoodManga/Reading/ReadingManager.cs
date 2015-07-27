@@ -4,9 +4,9 @@ using Mu.Client.Infrastructure.Components;
 
 namespace Mu.GoodManga.Reading
 {
-    public class ReadingManager : ComponentBase
+    public class ReadingManager : ManagerBase
     {
-        public ReadingManager(IComponent pParent)
+        public ReadingManager(IManager pParent)
             : base(pParent)
         {
         }

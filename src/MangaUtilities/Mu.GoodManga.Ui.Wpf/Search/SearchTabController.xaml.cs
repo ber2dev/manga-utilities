@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure;
-using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
+﻿using Mu.Client.Infrastructure.Components;
 using Mu.GoodManga.Search;
 
 namespace Mu.GoodManga.Ui.Wpf.Search
@@ -9,25 +6,15 @@ namespace Mu.GoodManga.Ui.Wpf.Search
     /// <summary>
     /// Interaction logic for DownloadTabController.xaml
     /// </summary>
-    public partial class SearchTabController
+    public partial class SearchTabController : ISearchTabController
     {
-        public SearchTabController(IComponent pParent)
-            : base(pParent)
+        public SearchTabController(IManager pManager)
+            : base(pManager)
         {
             InitializeComponent();
 
-            var searchManager = new SearchManager(this);
+            var searchManager = new SearchManager(GetManager());
             Content = new SearchController(searchManager);
-        }
-
-        public override IActionResult Execute(IAction pAction)
-        {
-            if (pAction is LoadAction)
-            {
-                return ExecuteToChildren(new LoadAction(this));
-            }
-
-            return base.Execute(pAction);
         }
     }
 }

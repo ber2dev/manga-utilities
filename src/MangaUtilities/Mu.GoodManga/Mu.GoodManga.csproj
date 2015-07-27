@@ -46,8 +46,14 @@
   <ItemGroup>
     <Compile Include="Actions\WebSearchAction.cs" />
     <Compile Include="GoodMangaManager.cs" />
+    <Compile Include="IGoodMangaTabController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reading\ChapterManager.cs" />
+    <Compile Include="Reading\IChapterController.cs" />
+    <Compile Include="Reading\IMangaReaderController.cs" />
+    <Compile Include="Reading\IPageController.cs" />
+    <Compile Include="Reading\IReaderController.cs" />
+    <Compile Include="Reading\IReaderTabController.cs" />
     <Compile Include="Reading\MangaReaderManager.cs" />
     <Compile Include="Reading\PageManager.cs" />
     <Compile Include="Reading\ReadChapterAction.cs" />
@@ -63,6 +69,8 @@
     <Compile Include="Search\GoodMangaSearchResult.cs" />
     <Compile Include="Search\GoodMangaSearchService.cs" />
     <Compile Include="Search\GoodMangaSearchTask.cs" />
+    <Compile Include="Search\ISearchController.cs" />
+    <Compile Include="Search\ISearchTabController.cs" />
     <Compile Include="Search\MangaInformation.cs" />
     <Compile Include="Search\SearchingManager.cs" />
     <Compile Include="Search\SearchManager.cs" />

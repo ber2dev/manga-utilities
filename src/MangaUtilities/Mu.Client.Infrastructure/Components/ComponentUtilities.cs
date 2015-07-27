@@ -9,16 +9,16 @@ namespace Mu.Client.Infrastructure.Components
     public static class ComponentUtilities
     {
         public static IEnumerable<IActionResult> ExecuteToChildren(
-            IComponent pComponent, 
+            IManager pManager, 
             IAction pAction,
             bool pCheckSource)
         {
-            ArgumentsValidation.NotNull(pComponent, "pComponent");
+            ArgumentsValidation.NotNull(pManager, "pManager");
             ArgumentsValidation.NotNull(pAction, "pAction");
 
             var result = new List<IActionResult>();
 
-            var children = pComponent.GetChildren();
+            var children = pManager.GetChildren();
             if (children != null)
             {
                 var checkedChildren = children.Where(x => !pCheckSource || !ReferenceEquals(x, pAction.GetSource()));
@@ -37,22 +37,22 @@ namespace Mu.Client.Infrastructure.Components
             return new ReadOnlyCollection<IActionResult>(result);
         }
 
-        public static IEnumerable<IActionResult> ExecuteToChildren(IComponent pComponent, IAction pAction)
+        public static IEnumerable<IActionResult> ExecuteToChildren(IManager pManager, IAction pAction)
         {
-            return ExecuteToChildren(pComponent, pAction, true);
+            return ExecuteToChildren(pManager, pAction, true);
         }
 
         public static IEnumerable<IActionResult> ExecuteToParent(
-            IComponent pComponent, 
+            IManager pManager, 
             IAction pAction,
             bool pCheckSource)
         {
-            ArgumentsValidation.NotNull(pComponent, "pComponent");
+            ArgumentsValidation.NotNull(pManager, "pManager");
             ArgumentsValidation.NotNull(pAction, "pAction");
 
             var result = new List<IActionResult>();
 
-            var parent = pComponent.GetParent();
+            var parent = pManager.GetParent();
             if (parent != null && (!pCheckSource || !ReferenceEquals(parent, pAction.GetSource())))
             {
                 var r = parent.Execute(pAction);
@@ -65,9 +65,9 @@ namespace Mu.Client.Infrastructure.Components
             return new ReadOnlyCollection<IActionResult>(result);
         }
 
-        public static IEnumerable<IActionResult> ExecuteToParent(IComponent pComponent, IAction pAction)
+        public static IEnumerable<IActionResult> ExecuteToParent(IManager pManager, IAction pAction)
         {
-            return ExecuteToParent(pComponent, pAction, true);
+            return ExecuteToParent(pManager, pAction, true);
         }
     }
 }

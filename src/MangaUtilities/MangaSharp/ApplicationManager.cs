@@ -4,7 +4,7 @@ using Mu.Client.Infrastructure.Components;
 
 namespace MangaSharp
 {
-    public class ApplicationManager : ComponentBase
+    public class ApplicationManager : ManagerBase
     {
         private readonly Application _current;
 

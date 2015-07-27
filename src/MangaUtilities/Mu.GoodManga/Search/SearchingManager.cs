@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure.Actions;
+﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components;
 
 namespace Mu.GoodManga.Search
 {
-    public class SearchingManager : ComponentBase
+    public class SearchingManager : ManagerBase
     {
-        public SearchingManager(IComponent pParent)
+        public SearchingManager(IManager pParent)
             : base(pParent)
         {
         }

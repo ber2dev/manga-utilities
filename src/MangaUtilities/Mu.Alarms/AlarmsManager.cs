@@ -3,9 +3,9 @@ using Mu.Client.Infrastructure.Components;
 
 namespace Mu.Alarms
 {
-    public class AlarmsManager : ComponentBase
+    public class AlarmsManager : ManagerBase
     {
-        public AlarmsManager(IComponent pParent)
+        public AlarmsManager(IManager pParent)
             : base(pParent)
         {
         }

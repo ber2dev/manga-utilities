@@ -5,9 +5,9 @@ using Mu.GoodManga.Search;
 
 namespace Mu.GoodManga.Reading
 {
-    public class ChapterManager : ComponentBase
+    public class ChapterManager : ManagerBase
     {
-        public ChapterManager(IComponent pParent)
+        public ChapterManager(IManager pParent)
             : base(pParent)
         {
         }
