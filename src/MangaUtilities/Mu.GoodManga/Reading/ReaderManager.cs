@@ -22,9 +22,10 @@ namespace Mu.GoodManga.Reading
                 return ExecuteToChildren(new LoadAction(this));
             }
 
-            if (pAction is ReadMangaAction)
+            var readMangaAction = pAction as ReadMangaAction;
+            if (readMangaAction != null)
             {
-                return ExecuteToChildren(pAction);
+                return ReadManga(readMangaAction);
             }
 
             return base.Execute(pAction);

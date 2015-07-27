@@ -31,6 +31,7 @@ namespace Mu.GoodManga.Search
             {
                 _searchService.Search(
                     new SearchParameters(((WebSearchAction)pAction).GetParameter<string>("SearchKey")));
+                return GetCannotExecuteActionResult(pAction);
             }
 
             return base.Execute(pAction);
