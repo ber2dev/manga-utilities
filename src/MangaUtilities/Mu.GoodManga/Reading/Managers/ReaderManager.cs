@@ -80,7 +80,6 @@ namespace Mu.GoodManga.Reading.Managers
 
             var mangaReaderManager = new MangaReaderManager(this, pManga);
             readerController.CreateReader(mangaReaderManager);
-            //MangaReaderTabControl.Items.Add(new MangaReaderController(mangaReaderManager));
 
             return mangaReaderManager;
         }

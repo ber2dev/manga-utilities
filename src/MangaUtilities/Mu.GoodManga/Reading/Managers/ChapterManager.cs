@@ -6,12 +6,18 @@ namespace Mu.GoodManga.Reading.Managers
 {
     public class ChapterManager : ManagerBase
     {
-        public ChapterManager(IManager pParent)
+        private readonly ChapterInformation _chapterToRead;
+
+        public ChapterManager(IManager pParent, ChapterInformation pChapterToRead)
             : base(pParent)
         {
+            _chapterToRead = pChapterToRead;
         }
 
-        public ChapterInformation Chapter { get; set; }
+        public ChapterInformation Chapter
+        {
+            get { return _chapterToRead; } 
+        }
 
         public override IActionResult Execute(object pSouce, IAction pAction)
         {
