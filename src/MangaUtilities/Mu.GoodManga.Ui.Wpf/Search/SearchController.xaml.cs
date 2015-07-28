@@ -3,9 +3,11 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
-using Mu.GoodManga.Actions;
 using Mu.GoodManga.Reading;
+using Mu.GoodManga.Reading.Actions;
 using Mu.GoodManga.Search;
+using Mu.GoodManga.Search.Actions;
+using Mu.GoodManga.Search.Controllers;
 
 namespace Mu.GoodManga.Ui.Wpf.Search
 {

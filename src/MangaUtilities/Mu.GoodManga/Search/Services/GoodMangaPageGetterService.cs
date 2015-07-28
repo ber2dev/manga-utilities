@@ -7,7 +7,7 @@ using Mu.Core.Common.Tasking;
 using Mu.Core.Search;
 using Mu.Main.Search;
 
-namespace Mu.GoodManga.Search
+namespace Mu.GoodManga.Search.Services
 {
     public class GoodMangaPageGetterService: AsyncServiceBase, IPageGetterService, IObservable<IPageGotResult>
     {

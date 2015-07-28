@@ -1,9 +1,7 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
+﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Managers;
 
-namespace Mu.GoodManga.Reading
+namespace Mu.GoodManga.Reading.Managers
 {
     public class PageManager : ManagerBase
     {

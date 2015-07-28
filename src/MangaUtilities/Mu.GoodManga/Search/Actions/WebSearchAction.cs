@@ -1,7 +1,6 @@
-﻿using Mu.Client.Infrastructure;
-using Mu.Client.Infrastructure.Actions;
+﻿using Mu.Client.Infrastructure.Actions;
 
-namespace Mu.GoodManga.Actions
+namespace Mu.GoodManga.Search.Actions
 {
     public class WebSearchAction : NoAction
     {

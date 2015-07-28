@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Reading;
+using Mu.GoodManga.Reading.Managers;
 using Mu.GoodManga.Search;
+using Mu.GoodManga.Search.Managers;
 using Mu.GoodManga.Ui.Wpf.Reading;
 using Mu.GoodManga.Ui.Wpf.Search;
 

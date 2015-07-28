@@ -1,6 +1,6 @@
 using Mu.Client.Infrastructure.Actions;
 
-namespace Mu.GoodManga.Reading
+namespace Mu.GoodManga.Reading.Actions
 {
     public class ReadChapterAction : ActionBase
     {

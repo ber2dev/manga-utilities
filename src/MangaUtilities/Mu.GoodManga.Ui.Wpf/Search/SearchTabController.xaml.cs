@@ -1,6 +1,8 @@
 ﻿using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Search;
+using Mu.GoodManga.Search.Controllers;
+using Mu.GoodManga.Search.Managers;
 
 namespace Mu.GoodManga.Ui.Wpf.Search
 {

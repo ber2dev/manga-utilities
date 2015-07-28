@@ -1,8 +1,8 @@
 ﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Managers;
-using Mu.GoodManga.Reading;
+using Mu.GoodManga.Reading.Actions;
 
-namespace Mu.GoodManga.Search
+namespace Mu.GoodManga.Search.Managers
 {
     public class SearchingManager : ManagerBase
     {

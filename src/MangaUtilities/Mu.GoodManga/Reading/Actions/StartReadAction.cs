@@ -1,23 +1,23 @@
 ﻿using Mu.Client.Infrastructure.Actions;
 using Mu.GoodManga.Search;
 
-namespace Mu.GoodManga.Reading
+namespace Mu.GoodManga.Reading.Actions
 {
-    public class ReadMangaAction : ActionBase
+    public class StartReadAction : ActionBase
     {
         public const string MANGA_INFORMATION_PARAMETER = "MANGA_INFORMATION";
         public const string CHAPTER_INFORMATION_PARAMETER = "CHAPTER_INFORMATION";
 
-        public ReadMangaAction(object pSource)
-            : this(pSource, null, null)
-        {
-        }
-
-        public ReadMangaAction(object pSource, MangaInformation pManga, ChapterInformation pChapter)
+        public StartReadAction(object pSource, MangaInformation pManga, ChapterInformation pChapter)
             : base(pSource)
         {
             Manga = pManga;
             Chapter = pChapter;
+        }
+
+        public StartReadAction(object pSource)
+            : this(pSource, null, null)
+        {
         }
 
         public MangaInformation Manga

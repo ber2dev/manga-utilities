@@ -4,7 +4,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Mu.Core.Search;
 
-namespace Mu.GoodManga.Search
+namespace Mu.GoodManga.Search.Services
 {
     public class GoodMangaGetPageTask : GetPageTaskBase
     {

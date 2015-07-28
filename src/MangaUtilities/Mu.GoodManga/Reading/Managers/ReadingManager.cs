@@ -1,31 +1,28 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
+﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Managers;
-using Mu.Core.Common.Validation;
-using Mu.GoodManga.Search;
+using Mu.GoodManga.Reading.Actions;
 
-namespace Mu.GoodManga.Reading
+namespace Mu.GoodManga.Reading.Managers
 {
-    public class MangaReaderManager : ManagerBase
+    public class ReadingManager : ManagerBase
     {
-        public MangaReaderManager(IManager pParent, MangaInformation pManga)
+        public ReadingManager(IManager pParent)
             : base(pParent)
         {
-            ArgumentsValidation.NotNull(pManga, "pManga");
-
-            Manga = pManga;
         }
-
-        public MangaInformation Manga { get; private set; }
 
         public override IActionResult Execute(object pSouce, IAction pAction)
         {
+            if (!CanExecute(pAction))
+            {
+                return GetCannotExecuteActionResult(pAction);
+            }
+
             if (pAction is LoadAction)
             {
                 return ExecuteToChildren(new LoadAction(this));
             }
-
+            
             if (pAction is StartReadAction)
             {
                 return ExecuteToChildren(pAction);

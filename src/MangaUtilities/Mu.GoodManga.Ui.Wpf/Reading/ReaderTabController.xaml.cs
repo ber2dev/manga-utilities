@@ -1,6 +1,8 @@
 ﻿using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Reading;
+using Mu.GoodManga.Reading.Controllers;
+using Mu.GoodManga.Reading.Managers;
 
 namespace Mu.GoodManga.Ui.Wpf.Reading
 {

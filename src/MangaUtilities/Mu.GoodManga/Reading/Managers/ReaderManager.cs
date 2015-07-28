@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
 using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.Core.Common.Validation;
+using Mu.GoodManga.Reading.Actions;
+using Mu.GoodManga.Reading.Controllers;
 using Mu.GoodManga.Search;
 
-namespace Mu.GoodManga.Reading
+namespace Mu.GoodManga.Reading.Managers
 {
     public class ReaderManager : ManagerBase
     {

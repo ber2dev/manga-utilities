@@ -1,6 +1,6 @@
 using Mu.Client.Infrastructure.Actions;
 
-namespace Mu.GoodManga.Search
+namespace Mu.GoodManga.Search.Actions
 {
     public class AddMangaAction : ActionBase
     {
