@@ -1,4 +1,4 @@
-﻿using Mu.Client.Infrastructure.Components;
+﻿using System.Linq;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Reading;
 using Mu.GoodManga.Search;
@@ -24,6 +24,17 @@ namespace Mu.GoodManga.Ui.Wpf
 
             var readinghManager = new ReadingManager(goodMangaManager);
             TabControl.Items.Add(new ReaderTabController(readinghManager));
+        }
+
+        public void ActivateTab(GoodMangaContext pGoodMangaContext)
+        {
+            var tab = TabControl.Items.OfType<IGoodMangaTab>().FirstOrDefault(x => x.Context == pGoodMangaContext);
+            if (tab == null)
+            {
+                return;
+            }
+
+            TabControl.SelectedItem = tab;
         }
     }
 }

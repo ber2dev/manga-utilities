@@ -1,6 +1,6 @@
 ﻿using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
+using Mu.GoodManga.Reading;
 
 namespace Mu.GoodManga.Search
 {
@@ -24,6 +24,12 @@ namespace Mu.GoodManga.Search
             }
 
             return base.Execute(pSouce, pAction);
+        }
+
+        protected override bool CanExecute(IAction pAction)
+        {
+            return base.CanExecute(pAction)
+                   || !(pAction is StartReadAction);
         }
     }
 }

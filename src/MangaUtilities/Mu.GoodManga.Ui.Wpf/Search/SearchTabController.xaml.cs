@@ -17,5 +17,7 @@ namespace Mu.GoodManga.Ui.Wpf.Search
             var searchManager = new SearchManager(GetManager());
             Content = new SearchController(searchManager);
         }
+
+        public GoodMangaContext Context { get { return GoodMangaContext.Search; } }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Mu.Client.Infrastructure.Components.Controllers;
 
-namespace Mu.GoodManga.Ui.Wpf.Reading
+namespace Mu.GoodManga.Reading
 {
-    public interface IReaderTabController : IController
+    public interface IReaderTabController : IGoodMangaTab, IController
     {
     }
 }

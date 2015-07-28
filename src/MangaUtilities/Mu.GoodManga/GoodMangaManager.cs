@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using Mu.Client.Infrastructure.Actions;
-using Mu.Client.Infrastructure.Components;
+﻿using Mu.Client.Infrastructure.Actions;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.GoodManga.Reading;
 
@@ -20,9 +18,18 @@ namespace Mu.GoodManga
                 return ExecuteToChildren(new LoadAction(this));
             }
 
-            if (pAction is ReadMangaAction)
+            var readMangaAction = pAction as ReadMangaAction;
+            if (readMangaAction != null)
             {
-                return ExecuteToChildren(pAction);
+                var result = ExecuteToChildren(
+                    new StartReadAction(
+                        this, 
+                        readMangaAction.Manga, 
+                        readMangaAction.Chapter));
+
+                GetParent().GetController<IGoodMangaTabController>().ActivateTab(GoodMangaContext.Read);
+
+                return result;
             }
 
             return base.Execute(pSouce, pAction);

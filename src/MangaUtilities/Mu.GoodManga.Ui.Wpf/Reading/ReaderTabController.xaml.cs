@@ -19,5 +19,7 @@ namespace Mu.GoodManga.Ui.Wpf.Reading
 
             Content = readerController;
         }
+
+        public GoodMangaContext Context { get { return GoodMangaContext.Read;} }
     }
 }

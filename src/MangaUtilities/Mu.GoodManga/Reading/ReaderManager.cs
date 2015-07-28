@@ -5,7 +5,6 @@ using Mu.Client.Infrastructure.Components;
 using Mu.Client.Infrastructure.Components.Managers;
 using Mu.Core.Common.Validation;
 using Mu.GoodManga.Search;
-using Mu.GoodManga.Ui.Wpf.Reading;
 
 namespace Mu.GoodManga.Reading
 {
@@ -23,7 +22,7 @@ namespace Mu.GoodManga.Reading
                 return ExecuteToChildren(new LoadAction(this));
             }
 
-            var readMangaAction = pAction as ReadMangaAction;
+            var readMangaAction = pAction as StartReadAction;
             if (readMangaAction != null)
             {
                 return ReadManga(readMangaAction);
@@ -32,7 +31,7 @@ namespace Mu.GoodManga.Reading
             return base.Execute(pSouce, pAction);
         }
 
-        private IActionResult ReadManga(ReadMangaAction pAction)
+        private IActionResult ReadManga(StartReadAction pAction)
         {
             ArgumentsValidation.NotNull(pAction, "pAction");
 
@@ -49,7 +48,7 @@ namespace Mu.GoodManga.Reading
                 .Where(x => x != null && x.Manga != null)
                 .FirstOrDefault(x => x.Manga.Equals(manga));
 
-            var chapter = pAction.Chapter;
+            var chapter = pAction.Chapter ?? ChapterInformation.DEFAULT;
             return itemToActivate == null
                 ? StartReadingManga(manga, chapter)
                 : StartReadingManga(manga, chapter, itemToActivate);
