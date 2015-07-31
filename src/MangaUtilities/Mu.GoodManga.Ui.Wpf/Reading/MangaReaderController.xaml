@@ -12,7 +12,10 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <ListView x:Name="ChaptersList" />
+        <ListView 
+            x:Name="ChaptersList" 
+            SelectionChanged="ChaptersList_OnSelectionChanged"
+            MouseDoubleClick="ChaptersList_OnMouseDoubleClick" />
         
         <TabControl x:Name="ReadingChaptersTabControl" Grid.Column="1" TabStripPlacement="Right" />
         

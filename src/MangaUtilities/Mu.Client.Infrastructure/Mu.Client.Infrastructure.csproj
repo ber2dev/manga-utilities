@@ -47,6 +47,7 @@
     <Compile Include="Actions\ActionBase.cs" />
     <Compile Include="Actions\CompositeActionResult.cs" />
     <Compile Include="Actions\LoadAction.cs" />
+    <Compile Include="Actions\SelectItemAction.cs" />
     <Compile Include="Components\Managers\ManagerUtilities.cs" />
     <Compile Include="Components\Controllers\IController.cs" />
     <Compile Include="Components\Managers\Strategies\IComponentStrategy.cs" />
